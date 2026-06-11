@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>skylerproject_ | Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- SEO & Meta -->
+  <meta name="description"
+    content="Portfolio digital skylerproject_. Developer, content creator, dan tech enthusiast dengan desain Neo-Brutalist retro-pixel.">
+  <meta name="keywords"
+    content="skylerproject_, skyler, portfolio, developer, retro, web developer, indonesian, english, tech guides">
+  <meta name="author" content="skylerproject_">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="skylerproject_ | Portfolio">
+  <meta property="og:description" content="Digital space of skylerproject_. Developer & content creator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/skilerrr">
+</head>
+
+<body>
+
+  <!-- Background Audio Element -->
+  <audio id="bg-music" src="assets/Rex Orange County - Best Friend (Official Audio) - Rex Orange County (youtube).mp3"
+    loop></audio>
+
+  <!-- Screen Scanline Overlay (CRT Effect) -->
+  <div class="crt-overlay"></div>
+
+  <!-- Main Grid Page Wrapper -->
+  <div class="page-wrapper">
+
+    <!-- Header / Navigation -->
+    <header class="main-header">
+      <div class="header-logo">
+        <span class="logo-blink">▲</span>
+        <h1 data-t="nav.logo">skylerproject_</h1>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="#hero" class="nav-link" data-t="nav.home">HOME</a>
+        <a href="#about" class="nav-link" data-t="nav.about">ABOUT</a>
+        <a href="#projects" class="nav-link" data-t="nav.projects">PROJECTS</a>
+        <a href="#media-channels" class="nav-link" data-t="nav.media">CHANNELS</a>
+        <a href="#terminal-section" class="nav-link" data-t="nav.terminal">TERMINAL</a>
+      </nav>
+
+      <div class="header-controls">
+        <!-- Retro Audio Player Controls -->
+        <div class="music-player">
+          <button id="music-play-btn" class="music-btn" aria-label="Toggle Audio">
+            <span class="music-icon">▶</span> <span class="music-text">PLAY SOUND</span>
+          </button>
+          <button id="music-vol-btn" class="music-btn" aria-label="Volume Level">
+            VOL: 10%
+          </button>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="lang-selector">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="id">ID</button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+          <span class="theme-toggle-icon">☼</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- HERO SECTION -->
+      <section id="hero" class="section hero-section">
+        <div class="hero-grid">
+
+          <div class="hero-left">
+            <div class="system-status">
+              <span class="pulse-indicator"></span>
+              <span class="status-text" data-t="hero.welcome">SYSTEM INITIALIZED SUCCESSFULLY // STATUS OK</span>
+            </div>
+
+            <h2 class="hero-title glitch-text" data-text="skylerproject_" data-t="hero.title">skylerproject_</h2>
+
+            <!-- Typewriter Container -->
+            <div class="typewriter-container">
+              <span class="prompt-arrow">&gt;</span>
+              <span id="typewriter" data-t="hero.subtitle">DEVELOPER // CONTENT CREATOR // TECH ENTHUSIAST</span>
+              <span class="terminal-cursor">█</span>
+            </div>
+
+            <div class="hero-buttons-container">
+              <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary" data-t="hero.cta_explore">EXPLORE PROJECTS</a>
+                <a href="#about" class="btn btn-secondary" data-t="hero.cta_about">ABOUT ME</a>
+              </div>
+
+              <!-- Social shortcuts placed immediately in Hero page -->
+              <div class="hero-socials">
+                <a href="https://github.com/skilerrr" target="_blank" class="social-circle-link" title="Github">
+                  <span class="social-label">Github</span>
+                </a>
+                <a href="https://www.instagram.com/skylerproject_" target="_blank" class="social-circle-link"
+                  title="Instagram">
+                  <span class="social-label">Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@skylerf1freak" target="_blank" class="social-circle-link"
+                  title="Tiktok">
+                  <span class="social-label">Tiktok</span>
+                </a>
+                <a href="https://www.youtube.com/JustSkylerProject" target="_blank" class="social-circle-link"
+                  title="YouTube">
+                  <span class="social-label">Youtube</span>
+                </a>
+                <a href="https://wa.me/62817769084" target="_blank" class="social-circle-link" title="Whatsapp">
+                  <span class="social-label">Whatsapp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <!-- Profile circle inside retro stepped frame -->
+            <div class="profile-container">
+              <div class="pixel-border-wrapper">
+                <div class="profile-circle">
+                  <!-- User's profile image from assets -->
+                  <img src="assets/max redacted.png" alt="skylerproject_" class="profile-img">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ABOUT & SKILLS SECTION (Simplified Specs) -->
+      <section id="about" class="section about-section">
+        <div class="section-header-box">
+          <h3 data-t="about.title">PROFILE & COMPETENCY</h3>
+        </div>
+
+        <div class="about-grid-simplified">
+          <div class="bio-panel-wide">
+            <p class="bio-text" data-t="about.bio">
+              Hello! I am skylerproject_, a developer and digital content creator. My main focus is on building modern,
+              high-performance web applications with striking visual aesthetics. I love combining vintage computer
+              architectures and styling with modern web technologies.
+            </p>
+          </div>
+
+          <div class="skills-panel-wide">
+            <h4 data-t="about.skills_title">CORE COMPETENCIES</h4>
+            <div class="skills-grid">
+              <div class="skill-chip">HTML5/CSS3</div>
+              <div class="skill-chip">Javascript</div>
+              <div class="skill-chip">PHP</div>
+              <div class="skill-chip">Typescript</div>
+              <div class="skill-chip">UI/UX</div>
+              <div class="skill-chip">Video Editing</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION (Cleaned up, only featured Tech Guides) -->
+      <section id="projects" class="section projects-section">
+        <div class="section-header-box">
+          <h3 data-t="projects.title">FEATURED PROJECT</h3>
+        </div>
+
+        <div class="projects-grid-single">
+          <!-- Featured Card: Tech Guides by skylerproject_ -->
+          <div class="project-card featured-card-wide">
+            <div class="card-header">
+              <span class="card-badge" data-t="projects.featured">PRIMARY</span>
+              <span class="card-tech">NOTION RESOURCE</span>
+            </div>
+            <div class="card-body">
+              <h4 data-t="projects.techguides_title">Tech Guides by skylerproject_</h4>
+              <p data-t="projects.techguides_desc">Comprehensive guides, advanced programming tutorials, and desktop
+                system performance optimization tips.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://bit.ly/techguidesbyskyler" target="_blank" class="card-link">
+                <span data-t="projects.view_link">VISIT RESOURCE</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILED BIOGRAPHY & MEDIA CHANNELS SECTION -->
+      <section id="media-channels" class="section media-channels-section">
+        <div class="section-header-box">
+          <h3 data-t="media.title">IN-DEPTH BIOGRAPHY & MEDIA CHANNELS</h3>
+        </div>
+
+        <div class="media-intro">
+          <p class="bio-long-text" data-t="media.bio_long">
+            I'm a tech-focused content creator and developer. I split my creative energy between writing clean code and
+            producing engaging media for my audience. On YouTube, I dive deep into virtual driving physics and
+            multiplayer gaming. On Tiktok, I follow my passion for motorsport, editing memes and information about
+            Formula 1. I also maintain a highly detailed personal Notion blog where I publish step-by-step guides on
+            operating system tweaks, setup reviews, and development methodologies.
+          </p>
+        </div>
+
+        <div class="media-channels-grid">
+          <!-- YouTube Channel Card -->
+          <div class="media-card">
+            <div class="media-thumbnail-container">
+              <img src="assets/Screenshot YouTube.png" alt="YouTube CDID Roblox Gameplay" class="media-thumbnail">
+            </div>
+            <div class="media-card-body">
+              <h4 data-t="media.youtube_title">YouTube: Roblox Gaming</h4>
+              <p data-t="media.youtube_desc">Mainly featuring 'Car Driving Indonesia' (CDID) Roblox gameplay. I record
+                races, car reviews, custom builds, and multiplayer cruising events.</p>
+            </div>
+            <div class="media-card-footer">
+              <a href="https://www.youtube.com/JustSkylerProject" target="_blank" class="btn btn-media-link"
+                data-t="media.visit">OPEN CHANNEL</a>
+            </div>
+          </div>
+
+          <!-- Tiktok Channel Card -->
+          <div class="media-card">
+            <div class="media-thumbnail-container">
+              <img src="assets/Screenshot Tiktok.png" alt="Tiktok F1 Memes" class="media-thumbnail">
+            </div>
+            <div class="media-card-body">
+              <h4 data-t="media.tiktok_title">Tiktok: Formula 1 Hub</h4>
+              <p data-t="media.tiktok_desc">Sharing high-energy Formula 1 memes, historical facts, race summaries, and
+                general paddock gossip.</p>
+            </div>
+            <div class="media-card-footer">
+              <a href="https://www.tiktok.com/@skylerf1freak" target="_blank" class="btn btn-media-link"
+                data-t="media.visit">OPEN CHANNEL</a>
+            </div>
+          </div>
+
+          <!-- Notion Blog Card -->
+          <div class="media-card">
+            <div class="media-thumbnail-container">
+              <img src="assets/Screenshot Notion Site.png" alt="Notion Personal Blog" class="media-thumbnail">
+            </div>
+            <div class="media-card-body">
+              <h4 data-t="media.blog_title">Notion: Personal Blog</h4>
+              <p data-t="media.blog_desc">A dedicated digital space hosting my custom tech guides, command line
+                documentation, and code explanations.</p>
+            </div>
+            <div class="media-card-footer">
+              <a href="https://bit.ly/techguidesbyskyler" target="_blank" class="btn btn-media-link"
+                data-t="media.visit">OPEN CHANNEL</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE TERMINAL SECTION -->
+      <section id="terminal-section" class="section terminal-section">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-window-title" data-t="terminal.title">INTERACTIVE SHELL v1.1.0</span>
+          </div>
+
+          <div class="terminal-screen" id="terminal-screen">
+            <div class="terminal-output" id="terminal-output">
+              <div class="output-line" data-t="terminal.welcome">Welcome to skylerproject_ interactive shell. Type
+                'help' to list available system commands.</div>
+            </div>
+
+            <div class="terminal-input-line">
+              <span class="terminal-prompt">guest@skylerproject_:~$</span>
+              <input type="text" id="terminal-cli" autocomplete="off" autofocus
+                data-t-placeholder="terminal.placeholder" placeholder="Type command...">
+            </div>
+          </div>
+
+          <!-- Terminal Quick Action Helpers -->
+          <div class="terminal-helpers">
+            <button class="helper-btn" data-cmd="help">help</button>
+            <button class="helper-btn" data-cmd="about">about</button>
+            <button class="helper-btn" data-cmd="skills">skills</button>
+            <button class="helper-btn" data-cmd="projects">projects</button>
+            <button class="helper-btn" data-cmd="socials">socials</button>
+            <button class="helper-btn" data-cmd="clear">clear</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Expanded Diverse Footer Area -->
+    <footer class="main-footer-expanded">
+      <div class="footer-grid">
+        <!-- System Diagnostic Panel -->
+        <div class="footer-panel">
+          <span class="panel-header">DIAGNOSTIC DATA //</span>
+          <table class="diagnostic-table">
+            <tr>
+              <td>STATUS:</td>
+              <td class="status-active"><span class="online-indicator"></span> ACTIVE</td>
+            </tr>
+            <tr>
+              <td>UPTIME:</td>
+              <td>99.98%</td>
+            </tr>
+            <tr>
+              <td>ENGINE:</td>
+              <td>HTML/CSS/VANILLA JS</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- System Node Panel -->
+        <div class="footer-panel">
+          <span class="panel-header">CORE RESOURCE //</span>
+          <table class="diagnostic-table">
+            <tr>
+              <td>SOURCE:</td>
+              <td><a href="https://github.com/skilerrr" target="_blank" class="footer-link">github.com/skilerrr</a></td>
+            </tr>
+            <tr>
+              <td>EMAIL:</td>
+              <td><a href="mailto:diryaflop@gmail.com" class="footer-link">diryaflop@gmail.com</a></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Clock & Track Panel -->
+        <div class="footer-panel">
+          <span class="panel-header">TIME & AUDIO STREAMS //</span>
+          <div class="status-clock-box">
+            <span class="clock-label">SYS_TIME:</span>
+            <span id="system-clock" class="clock-display">00:00:00 AM</span>
+          </div>
+          <div class="music-playing-indicator">
+            <span class="track-label">TRACK:</span>
+            <span id="footer-track-name" class="track-name">BEST FRIEND (REX ORANGE COUNTY)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p data-t="footer.copyright">© 2026 skylerproject_. ALL RIGHTS RESERVED.</p>
+        <div class="footer-logo-gfx">▲ MONOLITH ARCHIVE // RUNNING OK</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Translation and Logic Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

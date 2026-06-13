@@ -13,44 +13,52 @@
   --border-width: 1px;
 
   /* Theme Defaults (Dark Mode) */
-  --bg-color: #000000;
-  --surface-color: #141313;
-  --surface-dim: #0e0e0e;
-  --surface-bright: #3a3939;
-  --surface-container: #1c1b1b;
-  --surface-container-high: #2a2a2a;
-  --text-color: #ffffff;
-  --text-secondary: #888888;
-  --border-color: #222222;
-  --border-active: #ffffff;
-  --glow-color: rgba(255, 255, 255, 0.4);
-  --glow-light: rgba(255, 255, 255, 0.1);
+  --bg-color: #16161a;
+  --surface-color: #202024;
+  --surface-dim: #18181c;
+  --surface-bright: #38383e;
+  --surface-container: #232328;
+  --surface-container-high: #2f2f35;
+  --text-color: #e8e8ed;
+  --text-secondary: #a1a1a6;
+  --border-color: #2e2e34;
+  --border-active: var(--accent-color);
+  --accent-color: #a62626;
+  --glow-color: rgba(166, 38, 38, 0.4);
+  --glow-light: rgba(166, 38, 38, 0.15);
+  --header-bg: rgba(22, 22, 26, 0.75);
+  --cursor-bg: rgba(232, 232, 237, 0.08);
+  --cursor-hover-bg: rgba(232, 232, 237, 0.2);
 
   /* Background interactive gradient */
   --gradient-glow: radial-gradient(circle 300px at var(--mouse-x, 0) var(--mouse-y, 0),
-      rgba(255, 255, 255, 0.05) 0%,
-      rgba(255, 255, 255, 0.01) 40%,
+      rgba(166, 38, 38, 0.08) 0%,
+      rgba(166, 38, 38, 0.02) 40%,
       transparent 100%);
 }
 
 /* Light Mode Theme Overrides */
 [data-theme="light"] {
-  --bg-color: #ffffff;
-  --surface-color: #f8f8f8;
-  --surface-dim: #f0f0f0;
-  --surface-bright: #e0e0e0;
-  --surface-container: #eeeeee;
-  --surface-container-high: #dddddd;
-  --text-color: #000000;
-  --text-secondary: #555555;
-  --border-color: #dddddd;
-  --border-active: #000000;
-  --glow-color: rgba(0, 0, 0, 0.25);
-  --glow-light: rgba(0, 0, 0, 0.05);
+  --bg-color: #f5f4f0;
+  --surface-color: #ebeae6;
+  --surface-dim: #e2e1dc;
+  --surface-bright: #d5d4ce;
+  --surface-container: #deddd8;
+  --surface-container-high: #d0cfca;
+  --text-color: #222222;
+  --text-secondary: #68686e;
+  --border-color: #dbdad5;
+  --border-active: var(--accent-color);
+  --accent-color: #8c1c1c;
+  --glow-color: rgba(140, 28, 28, 0.35);
+  --glow-light: rgba(140, 28, 28, 0.1);
+  --header-bg: rgba(245, 244, 240, 0.75);
+  --cursor-bg: rgba(34, 34, 34, 0.06);
+  --cursor-hover-bg: rgba(34, 34, 34, 0.15);
 
   --gradient-glow: radial-gradient(circle 300px at var(--mouse-x, 0) var(--mouse-y, 0),
-      rgba(0, 0, 0, 0.03) 0%,
-      rgba(0, 0, 0, 0.01) 40%,
+      rgba(140, 28, 28, 0.06) 0%,
+      rgba(140, 28, 28, 0.01) 40%,
       transparent 100%);
 }
 
@@ -122,23 +130,7 @@ body::before {
   background-size: 100% 4px;
 }
 
-/* Custom Cursor overrides for light mode */
-[data-theme="light"] #custom-cursor {
-  border-color: #000000 !important;
-  background-color: transparent !important;
-}
 
-[data-theme="light"] #custom-cursor.hovered {
-  background-color: #000000 !important;
-}
-
-[data-theme="light"] .custom-cursor-text {
-  color: #000000 !important;
-}
-
-[data-theme="light"] #custom-cursor.hovered .custom-cursor-text {
-  color: #ffffff !important;
-}
 
 /* ==========================================================================
    LAYOUT STRUCTURE
@@ -156,6 +148,9 @@ body::before {
   .page-wrapper {
     padding: 0 16px;
   }
+  .main-footer-expanded {
+    padding: 32px 16px 24px 16px;
+  }
 }
 
 /* Main Header & Navigation */
@@ -164,8 +159,10 @@ body::before {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  border-bottom: 2px solid var(--text-color);
-  background-color: var(--bg-color);
+  border-bottom: 2px solid var(--accent-color);
+  background-color: var(--header-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -213,9 +210,9 @@ body::before {
 
 .nav-link:hover {
   color: var(--text-color);
-  border-color: var(--text-color);
+  border-color: var(--accent-color);
   background-color: var(--surface-container);
-  box-shadow: 2px 2px 0 var(--text-color);
+  box-shadow: 2px 2px 0 var(--accent-color);
   transform: translate(-2px, -2px);
 }
 
@@ -342,14 +339,16 @@ body::before {
 }
 
 .btn-primary {
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
 }
 
 .btn-primary:hover {
   background-color: var(--bg-color);
-  color: var(--text-color);
-  box-shadow: 4px 4px 0 var(--text-color);
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 4px 4px 0 var(--accent-color);
   transform: translate(-4px, -4px);
 }
 
@@ -358,9 +357,10 @@ body::before {
 }
 
 .btn-secondary:hover {
-  background-color: var(--text-color);
-  color: var(--bg-color);
-  box-shadow: 4px 4px 0 var(--text-color);
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+  box-shadow: 4px 4px 0 var(--accent-color);
   transform: translate(-4px, -4px);
 }
 
@@ -385,7 +385,7 @@ body::before {
 }
 
 .section-header-box {
-  border-bottom: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--accent-color);
   margin: -32px -32px 32px -32px;
   padding: 16px 32px;
   background-color: var(--surface-color);
@@ -547,7 +547,7 @@ body::before {
   left: 0;
   width: 0%;
   height: 1px;
-  background-color: var(--text-color);
+  background-color: var(--accent-color);
   transition: width 0.2s ease;
 }
 
@@ -691,10 +691,10 @@ body::before {
 }
 
 .skill-chip:hover {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
-  color: var(--bg-color);
-  box-shadow: 2px 2px 0 var(--text-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: #ffffff;
+  box-shadow: 2px 2px 0 var(--accent-color);
   transform: translate(-2px, -2px);
 }
 
@@ -739,8 +739,8 @@ body::before {
   font-size: 9px;
   font-weight: 700;
   padding: 2px 6px;
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  background-color: var(--accent-color);
+  color: #ffffff;
 }
 
 .card-tech {
@@ -1024,10 +1024,10 @@ body::before {
    ========================================================================== */
 
 .main-footer-expanded {
-  margin-top: 64px;
-  border-top: 2px solid var(--text-color);
+  margin-top: 48px;
+  border-top: 2px solid var(--accent-color);
   background-color: var(--bg-color);
-  padding: 48px 0 24px 0;
+  padding: 32px 32px 24px 32px;
 }
 
 .footer-grid {

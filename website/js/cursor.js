@@ -67,7 +67,10 @@ class RetroCursorController {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      transition: "width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s"
+      backdropFilter: "blur(4px)",
+      webkitBackdropFilter: "blur(4px)",
+      backgroundColor: "var(--cursor-bg)",
+      transition: "width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, backdrop-filter 0.2s, -webkit-backdrop-filter 0.2s"
     });
 
     Object.assign(this.cursorTextEl.style, {
@@ -156,9 +159,10 @@ class RetroCursorController {
         this.cursorEl.style.width = "40px";
         this.cursorEl.style.height = "40px";
         this.cursorEl.classList.add("hovered");
-        // CSS takes care of cursor text color and background-color via variables
-        this.cursorEl.style.backgroundColor = "var(--text-color, #ffffff)";
-        this.cursorTextEl.style.color = "var(--bg-color, #000000)";
+        this.cursorEl.style.backgroundColor = "var(--cursor-hover-bg)";
+        this.cursorEl.style.backdropFilter = "blur(6px)";
+        this.cursorEl.style.webkitBackdropFilter = "blur(6px)";
+        this.cursorTextEl.style.color = "var(--text-color, #ffffff)";
         this.cursorTextEl.style.transform = "scale(1)";
         this.cursorTextEl.style.fontWeight = "bold";
       });
@@ -168,7 +172,9 @@ class RetroCursorController {
         this.cursorEl.style.width = "20px";
         this.cursorEl.style.height = "20px";
         this.cursorEl.classList.remove("hovered");
-        this.cursorEl.style.backgroundColor = "transparent";
+        this.cursorEl.style.backgroundColor = "var(--cursor-bg)";
+        this.cursorEl.style.backdropFilter = "blur(4px)";
+        this.cursorEl.style.webkitBackdropFilter = "blur(4px)";
         this.cursorTextEl.style.color = "var(--text-color, #ffffff)";
         this.cursorTextEl.style.transform = "scale(0.8)";
         this.cursorTextEl.style.fontWeight = "normal";
@@ -258,13 +264,13 @@ class RetroCursorController {
         const cell = this.activeCells[key];
         
         this.ctx.fillStyle = isDarkMode 
-          ? `rgba(255, 255, 255, ${cell.opacity * 0.06})` 
-          : `rgba(0, 0, 0, ${cell.opacity * 0.04})`;
+          ? `rgba(166, 38, 38, ${cell.opacity * 0.08})` 
+          : `rgba(140, 28, 28, ${cell.opacity * 0.06})`;
         this.ctx.fillRect(cell.x, cell.y, this.gridSize, this.gridSize);
 
         this.ctx.strokeStyle = isDarkMode 
-          ? `rgba(255, 255, 255, ${cell.opacity * 0.2})` 
-          : `rgba(0, 0, 0, ${cell.opacity * 0.15})`;
+          ? `rgba(166, 38, 38, ${cell.opacity * 0.25})` 
+          : `rgba(140, 28, 28, ${cell.opacity * 0.2})`;
         this.ctx.strokeRect(cell.x, cell.y, this.gridSize, this.gridSize);
 
         cell.opacity -= 0.015;
@@ -289,8 +295,8 @@ class RetroCursorController {
         const opacity = p.life * 0.6;
         
         this.ctx.strokeStyle = isDarkMode 
-          ? `rgba(255, 255, 255, ${opacity})` 
-          : `rgba(0, 0, 0, ${opacity})`;
+          ? `rgba(166, 38, 38, ${opacity})` 
+          : `rgba(140, 28, 28, ${opacity})`;
         this.ctx.lineWidth = 1;
         this.ctx.strokeRect(p.x - currentSize / 2, p.y - currentSize / 2, currentSize, currentSize);
       }

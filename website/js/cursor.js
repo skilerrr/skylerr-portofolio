@@ -63,7 +63,7 @@ class RetroCursorController {
       border: "2px solid var(--text-color, #ffffff)",
       pointerEvents: "none",
       transform: "translate(-50%, -50%)",
-      zIndex: "9999",
+      zIndex: "10001",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -183,7 +183,7 @@ class RetroCursorController {
 
     const attachListeners = () => {
       // Buttons/CTAs
-      document.querySelectorAll("a, button, .theme-toggle-btn, .lang-btn, .music-btn").forEach(el => {
+      document.querySelectorAll("a, button, .theme-toggle-btn, .lang-btn, .music-btn, .enter-prompt").forEach(el => {
         if (!el.dataset.cursorBound) {
           el.dataset.cursorBound = "true";
           let msg = "CLICK";
@@ -197,6 +197,7 @@ class RetroCursorController {
           else if (el.classList.contains("theme-toggle-btn")) msg = "THEME";
           else if (el.id === "music-play-btn") msg = "AUDIO";
           else if (el.id === "music-vol-btn") msg = "VOLUME";
+          else if (el.classList.contains("enter-prompt")) msg = "ENTER";
           updateHoverState(el, msg);
         }
       });

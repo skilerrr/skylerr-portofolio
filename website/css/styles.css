@@ -130,6 +130,243 @@ body::before {
   background-size: 100% 4px;
 }
 
+/* ==========================================================================
+   RETRO LOADER OVERLAY
+   ========================================================================== */
+
+/* Hide all main page content until loader is dismissed */
+.page-hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.page-visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transition: opacity 0.4s ease !important;
+}
+
+/* The loader itself — sits on top of EVERYTHING */
+#retro-loader {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: #f5f4f0;
+  z-index: 99999 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
+  cursor: none;
+}
+
+[data-theme="dark"] #retro-loader {
+  background-color: #16161a;
+}
+
+#retro-loader.loader-exit {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* CRT scan lines on loader */
+#retro-loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.04) 3px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.loader-panel {
+  width: 90%;
+  max-width: 520px;
+  border: 2px solid #8c1c1c;
+  background-color: #ebeae6;
+  box-shadow: 8px 8px 0 #8c1c1c;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+[data-theme="dark"] .loader-panel {
+  border-color: #a62626;
+  background-color: #202024;
+  box-shadow: 8px 8px 0 #a62626;
+}
+
+.loader-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.loader-brand-icon {
+  font-size: 22px;
+  color: #8c1c1c;
+  animation: cursor-flash 1s infinite steps(2, start);
+}
+
+[data-theme="dark"] .loader-brand-icon {
+  color: #a62626;
+}
+
+.loader-brand-name {
+  font-family: 'Anybody', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #222222;
+}
+
+[data-theme="dark"] .loader-brand-name {
+  color: #e8e8ed;
+}
+
+.loader-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #8c1c1c;
+  opacity: 0.6;
+}
+
+[data-theme="dark"] .loader-divider {
+  background-color: #a62626;
+}
+
+.loader-terminal-output {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #222222;
+}
+
+[data-theme="dark"] .loader-terminal-output {
+  color: #e8e8ed;
+}
+
+.loader-line {
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.loader-line.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.loader-line.status-line {
+  color: #8c1c1c;
+  font-weight: bold;
+}
+
+[data-theme="dark"] .loader-line.status-line {
+  color: #a62626;
+}
+
+.loader-progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.loader-progress-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #68686e;
+  display: flex;
+  justify-content: space-between;
+}
+
+[data-theme="dark"] .loader-progress-label {
+  color: #a1a1a6;
+}
+
+.loader-progress-track {
+  width: 100%;
+  height: 12px;
+  border: 1px solid #222222;
+  background-color: transparent;
+  padding: 2px;
+}
+
+[data-theme="dark"] .loader-progress-track {
+  border-color: #e8e8ed;
+}
+
+.loader-progress-fill {
+  width: 0%;
+  height: 100%;
+  background-color: #8c1c1c;
+  transition: width 0.12s linear;
+}
+
+[data-theme="dark"] .loader-progress-fill {
+  background-color: #a62626;
+}
+
+.enter-prompt {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #222222;
+  border: 1px dashed #8c1c1c;
+  padding: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, background-color 0.15s, color 0.15s;
+}
+
+[data-theme="dark"] .enter-prompt {
+  color: #e8e8ed;
+  border-color: #a62626;
+}
+
+.enter-prompt.active {
+  opacity: 1;
+  visibility: visible;
+  animation: text-float 2s infinite ease-in-out;
+}
+
+.enter-prompt:hover {
+  background-color: #8c1c1c;
+  color: #ffffff;
+  border-color: #8c1c1c;
+  cursor: none;
+}
+
+[data-theme="dark"] .enter-prompt:hover {
+  background-color: #a62626;
+  border-color: #a62626;
+}
+
+.blink-fast {
+  animation: cursor-flash 0.5s infinite steps(2, start);
+}
 
 
 /* ==========================================================================

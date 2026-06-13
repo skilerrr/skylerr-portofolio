@@ -1,6 +1,87 @@
 // Main Application Logic - skylerproject_ Portfolio Website
 
 document.addEventListener("DOMContentLoaded", () => {
+  let isAppEntered = false;
+
+  // ==========================================================================
+  // 0. RETRO LOADER SYSTEM
+  // ==========================================================================
+  const loader       = document.getElementById("retro-loader");
+  const progressFill = document.getElementById("loader-progress");
+  const pctLabel     = document.getElementById("loader-pct");
+  const enterPrompt  = document.getElementById("enter-prompt");
+  const pageWrapper  = document.querySelector(".page-wrapper");
+
+  // Lines to reveal sequentially
+  const lineIds = ["load-line-1","load-line-2","load-line-3","load-line-4","load-line-5"];
+  const lineEls = lineIds.map(id => document.getElementById(id));
+
+  // Progress milestones at which each line appears (0–100)
+  const lineMilestones = [0, 25, 50, 75, 95];
+  let revealedLines = 0;
+  let progress = 0;
+
+  // This will be assigned once the audio & terminal systems are set up
+  let onEnterCallbacks = [];
+
+  const setProgress = (pct) => {
+    const clamped = Math.min(100, Math.round(pct));
+    progressFill.style.width = `${clamped}%`;
+    if (pctLabel) pctLabel.textContent = `${clamped}%`;
+
+    // Reveal lines at milestones
+    for (let i = revealedLines; i < lineMilestones.length; i++) {
+      if (clamped >= lineMilestones[i] && lineEls[i]) {
+        lineEls[i].classList.add("visible");
+        revealedLines = i + 1;
+      }
+    }
+  };
+
+  const simulateLoading = () => {
+    const interval = setInterval(() => {
+      progress += Math.random() * 10 + 4;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        setProgress(100);
+
+        // Short pause, then show click-to-enter
+        setTimeout(() => {
+          if (pctLabel) pctLabel.closest(".loader-progress-label")
+            .querySelector("span:first-child").textContent = "COMPLETE";
+          enterPrompt.classList.add("active");
+          setupLoaderInteraction();
+        }, 400);
+      } else {
+        setProgress(progress);
+      }
+    }, 110);
+  };
+
+  const setupLoaderInteraction = () => {
+    const startApp = () => {
+      // Fade out loader
+      loader.classList.add("loader-exit");
+      setTimeout(() => { loader.style.display = "none"; }, 500);
+
+      // Reveal main page
+      pageWrapper.classList.remove("page-hidden");
+      pageWrapper.classList.add("page-visible");
+
+      isAppEntered = true;
+
+      // Fire deferred callbacks (audio, typewriter)
+      onEnterCallbacks.forEach(cb => cb());
+      onEnterCallbacks = [];
+
+      document.removeEventListener("click", startApp);
+    };
+    document.addEventListener("click", startApp);
+  };
+
+  simulateLoading();
+
   // ==========================================================================
   // 1. THEME MANAGER (DARK / LIGHT MODE)
   // ==========================================================================
@@ -56,7 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (translations[lang] && translations[lang][key]) {
         // Handle typewriter element separately to prevent interference
         if (el.id === "typewriter") {
-          startTypewriter(translations[lang][key]);
+          if (isAppEntered) {
+            startTypewriter(translations[lang][key]);
+          }
         } else {
           el.innerHTML = translations[lang][key];
         }
@@ -204,24 +287,18 @@ document.addEventListener("DOMContentLoaded", () => {
     appendTerminalLine(`Audio volume set to: ${(activeStage.value * 100).toFixed(0)}%`);
   });
 
-  // Auto-play attempt on first user click anywhere on page
-  const initAudioOnInteraction = () => {
+  // Register audio start on enter via the loader gate
+  onEnterCallbacks.push(() => {
     if (!isPlaying && bgMusic.paused) {
       bgMusic.play()
         .then(() => {
           isPlaying = true;
           updatePlayerUI();
-          appendTerminalLine("Audio initialized on user interaction.");
+          appendTerminalLine("Audio stream initialized on entry.");
         })
-        .catch(() => { });
+        .catch(() => {});
     }
-    // Remove listeners once audio starts
-    document.removeEventListener("click", initAudioOnInteraction);
-    document.removeEventListener("keydown", initAudioOnInteraction);
-  };
-
-  document.addEventListener("click", initAudioOnInteraction);
-  document.addEventListener("keydown", initAudioOnInteraction);
+  });
 
   // ==========================================================================
   // 5. FOOTER SYSTEM CLOCK
@@ -376,4 +453,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize Page Translations
   applyTranslations(currentLang);
+
+  // Register typewriter start on enter via the loader gate
+  onEnterCallbacks.push(() => {
+    const key = "hero.subtitle";
+    if (translations[currentLang] && translations[currentLang][key]) {
+      startTypewriter(translations[currentLang][key]);
+    }
+  });
 });

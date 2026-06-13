@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>skylerproject_ | Portfolio</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/max redacted.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,8 +41,38 @@
   <!-- Screen Scanline Overlay (CRT Effect) -->
   <div class="crt-overlay"></div>
 
-  <!-- Main Grid Page Wrapper -->
-  <div class="page-wrapper">
+  <!-- Retro Loading Screen Overlay -->
+  <div id="retro-loader">
+    <div class="loader-panel">
+      <div class="loader-brand">
+        <span class="loader-brand-icon">▲</span>
+        <span class="loader-brand-name">SKYLERPROJECT_</span>
+      </div>
+      <div class="loader-divider"></div>
+      <div class="loader-terminal-output">
+        <div class="loader-line" id="load-line-1">&gt; SYSTEM BOOTSTRAP v1.1.0...</div>
+        <div class="loader-line" id="load-line-2">&gt; LOADING CORE ASSETS...</div>
+        <div class="loader-line" id="load-line-3">&gt; INITIALIZING AUDIO STREAM...</div>
+        <div class="loader-line" id="load-line-4">&gt; CONFIGURING DESIGN SYSTEM...</div>
+        <div class="loader-line status-line" id="load-line-5">&gt; STATUS: ALL SYSTEMS READY.</div>
+      </div>
+      <div class="loader-progress-wrap">
+        <div class="loader-progress-label">
+          <span>LOADING...</span>
+          <span id="loader-pct">0%</span>
+        </div>
+        <div class="loader-progress-track">
+          <div class="loader-progress-fill" id="loader-progress"></div>
+        </div>
+      </div>
+      <div class="enter-prompt" id="enter-prompt">
+        <span class="blink-fast">▲</span>&nbsp; CLICK ANYWHERE TO ENTER &nbsp;<span class="blink-fast">▲</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Grid Page Wrapper (hidden until loader dismissed) -->
+  <div class="page-wrapper page-hidden">
 
     <!-- Header / Navigation -->
     <header class="main-header">

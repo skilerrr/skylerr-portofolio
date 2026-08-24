@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. TRANSLATION MANAGER (EN / ID)
   // ==========================================================================
   const langButtons = document.querySelectorAll(".lang-btn");
-  let currentLang = localStorage.getItem("lang") || "en"; // English is now default
+  let currentLang = localStorage.getItem("lang") || "en"; // English is default
 
   const applyTranslations = (lang) => {
     currentLang = lang;
@@ -203,11 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const playerWrapper = document.querySelector(".music-player");
   const footerTrackLabel = document.getElementById("footer-track-name");
 
-  // Set default initial volume to low (30%)
   bgMusic.volume = 0.3;
   let isPlaying = false;
 
-  // Volume stages configuration: 10% -> 30% -> 60% -> 100% -> Muted
   const volumeStages = [
     { value: 0.1, label: "VOL: 10%" },
     { value: 0.3, label: "VOL: 30%" },
@@ -215,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { value: 1.0, label: "VOL: 100%" },
     { value: 0.0, label: "VOL: MUTED" }
   ];
-  let currentVolStageIndex = 0; // Starts at index 0 (10%)
+  let currentVolStageIndex = 0;
 
   const updatePlayerUI = () => {
     if (isPlaying) {
@@ -234,7 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Update volume button text
     volBtn.textContent = volumeStages[currentVolStageIndex].label;
   };
 
@@ -258,13 +255,11 @@ document.addEventListener("DOMContentLoaded", () => {
     updatePlayerUI();
   };
 
-  // Play button click handler
   playBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     togglePlay();
   });
 
-  // Volume cycle button handler: 10% -> 30% -> 60% -> 100% -> Muted -> 10%
   volBtn.addEventListener("click", (e) => {
     e.stopPropagation();
 
@@ -273,7 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     bgMusic.volume = activeStage.value;
 
-    // If volume is changed while audio is paused, play it automatically to show response
     if (activeStage.value > 0 && !isPlaying) {
       bgMusic.play()
         .then(() => {
@@ -287,7 +281,6 @@ document.addEventListener("DOMContentLoaded", () => {
     appendTerminalLine(`Audio volume set to: ${(activeStage.value * 100).toFixed(0)}%`);
   });
 
-  // Register audio start on enter via the loader gate
   onEnterCallbacks.push(() => {
     if (!isPlaying && bgMusic.paused) {
       bgMusic.play()
@@ -301,7 +294,62 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ==========================================================================
-  // 5. FOOTER SYSTEM CLOCK
+  // 5. DISCORD 1-CLICK COPY & INTERACTION SYSTEM
+  // ==========================================================================
+  const discordCopyBtn = document.getElementById("discord-copy-btn");
+  const discordIdDisplay = document.getElementById("discord-id-display");
+  const copyFeedbackBanner = document.getElementById("copy-feedback-banner");
+  const discordUsername = "skylerproject_";
+  let copyResetTimer = null;
+
+  const copyDiscordToClipboard = () => {
+    navigator.clipboard.writeText(discordUsername).then(() => {
+      // Show feedback banner
+      if (copyFeedbackBanner) {
+        copyFeedbackBanner.classList.add("active");
+      }
+
+      // Update button label
+      if (discordCopyBtn) {
+        const labelEl = discordCopyBtn.querySelector(".copy-btn-label");
+        if (labelEl) {
+          labelEl.textContent = currentLang === "id" ? "USERNAME DISALIN!" : "COPIED TO CLIPBOARD!";
+        }
+        discordCopyBtn.classList.add("copied-success");
+      }
+
+      // Terminal announcement
+      appendTerminalLine(`Discord handle copied: @${discordUsername}`);
+
+      if (copyResetTimer) clearTimeout(copyResetTimer);
+      copyResetTimer = setTimeout(() => {
+        if (copyFeedbackBanner) {
+          copyFeedbackBanner.classList.remove("active");
+        }
+        if (discordCopyBtn) {
+          const labelEl = discordCopyBtn.querySelector(".copy-btn-label");
+          if (labelEl) {
+            labelEl.textContent = currentLang === "id" ? "SALIN USERNAME" : "COPY USERNAME";
+          }
+          discordCopyBtn.classList.remove("copied-success");
+        }
+      }, 3000);
+    }).catch(err => {
+      console.error("Failed to copy discord username:", err);
+      // Fallback
+      appendTerminalLine(`Discord Username: ${discordUsername}`);
+    });
+  };
+
+  if (discordCopyBtn) {
+    discordCopyBtn.addEventListener("click", copyDiscordToClipboard);
+  }
+  if (discordIdDisplay) {
+    discordIdDisplay.addEventListener("click", copyDiscordToClipboard);
+  }
+
+  // ==========================================================================
+  // 6. FOOTER SYSTEM CLOCK
   // ==========================================================================
   const systemClockEl = document.getElementById("system-clock");
 
@@ -314,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const ampm = hours >= 12 ? 'PM' : 'AM';
 
       hours = hours % 12;
-      hours = hours ? hours : 12; // the hour '0' should be '12'
+      hours = hours ? hours : 12;
       const formattedHours = String(hours).padStart(2, '0');
 
       systemClockEl.textContent = `${formattedHours}:${minutes}:${seconds} ${ampm}`;
@@ -322,10 +370,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   setInterval(tickClock, 1000);
-  tickClock(); // Immediate call
+  tickClock();
 
   // ==========================================================================
-  // 6. MOCK TERMINAL CLI SYSTEM
+  // 7. MOCK TERMINAL CLI SYSTEM
   // ==========================================================================
   const terminalCli = document.getElementById("terminal-cli");
   const terminalOutput = document.getElementById("terminal-output");
@@ -357,14 +405,18 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentLang === "id") {
           appendTerminalLine("Perintah yang tersedia:\n" +
             "  help      - Menampilkan panduan bantuan ini\n" +
-            "  about     - Menampilkan detail profil dan bio singkat\n" +
+            "  work      - Info ketersediaan proyek, freelance & jasa\n" +
+            "  discord   - Salin & tampilkan handle Discord resmi\n" +
+            "  about     - Menampilkan profil dan bio singkat\n" +
             "  skills    - Menampilkan keahlian utama skylerproject_\n" +
             "  projects  - Menampilkan daftar proyek unggulan\n" +
-            "  socials   - Tautan langsung ke media sosial terhubung\n" +
+            "  socials   - Tautan langsung ke seluruh media sosial\n" +
             "  clear     - Membersihkan layar terminal shell");
         } else {
           appendTerminalLine("Available commands:\n" +
             "  help      - Show this help guide\n" +
+            "  work      - Show freelance, collaboration & services\n" +
+            "  discord   - Direct Discord contact handle\n" +
             "  about     - Show profile and short biography\n" +
             "  skills    - Show core competencies of skylerproject_\n" +
             "  projects  - Show featured tech projects\n" +
@@ -373,13 +425,39 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         break;
 
+      case "work":
+      case "hire":
+      case "collab":
+        if (currentLang === "id") {
+          appendTerminalLine("STATUS: TERSEDIA UNTUK FREELANCE & KOLABORASI\n" +
+            "Layanan Utama:\n" +
+            "  1. Web Development (Neo-Brutalist & Modern Interactive Web)\n" +
+            "  2. Video Editing & Motion (TikTok, Reels, YouTube Gaming)\n" +
+            "  3. Laptop Enthusiast (Open to talk with! Rekomendasi & Diskusi Hardware)\n" +
+            "Kontak Utama: DM Discord -> @skylerproject_");
+        } else {
+          appendTerminalLine("STATUS: OPEN FOR FREELANCE & COLLABORATION\n" +
+            "Core Offerings:\n" +
+            "  1. Web Development (Neo-Brutalist & Modern Interactive Web)\n" +
+            "  2. Video Editing & Motion (TikTok, Reels, YouTube Gaming)\n" +
+            "  3. Laptop Enthusiast (Open to talk with! Specs & Setup chats)\n" +
+            "Primary Contact: Direct Discord -> @skylerproject_");
+        }
+        break;
+
+      case "discord":
+        copyDiscordToClipboard();
+        appendTerminalLine("DISCORD HANDLE: skylerproject_\n" +
+          ">> Direct DM channel open. Add 'skylerproject_' on Discord!");
+        break;
+
       case "about":
         if (currentLang === "id") {
           appendTerminalLine("PROFIL skylerproject_:\n" +
-            "skylerproject_ adalah seorang pengembang front-end dan kreator konten digital. Aktif membagikan video gaming CDID Roblox di YouTube dan meme Formula 1 di Tiktok, serta menulis panduan teknologi mendalam di Notion.");
+            "skylerproject_ adalah seorang web developer, video editor, kreator konten, dan laptop enthusiast. Senang mengeksplorasi desain retro-futuristik, gameplay CDID Roblox, dunia balap F1, dan arsitektur hardware laptop.");
         } else {
           appendTerminalLine("ABOUT skylerproject_:\n" +
-            "skylerproject_ is a front-end developer and tech content creator. Actively producing CDID Roblox gaming videos on YouTube, Formula 1 memes on Tiktok, and deep-dive technical blogs on Notion.");
+            "skylerproject_ is a web developer, video editor, content creator, and laptop enthusiast. Passionate about retro-futuristic web designs, CDID Roblox gaming, Formula 1 motorsport, and laptop hardware engineering.");
         }
         break;
 
@@ -390,7 +468,8 @@ document.addEventListener("DOMContentLoaded", () => {
           "  - PHP\n" +
           "  - Typescript\n" +
           "  - UI/UX\n" +
-          "  - Video Editing");
+          "  - Video Editing\n" +
+          "  - Laptop & Hardware Diagnostics");
         break;
 
       case "projects":
@@ -404,13 +483,15 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
 
       case "socials":
-        appendTerminalLine("SOCIAL CHANNELS:\n" +
-          "  - YouTube: https://www.youtube.com/JustSkylerProject (CDID Roblox)\n" +
-          "  - Tiktok: https://www.tiktok.com/@skylerf1freak (Formula 1 Memes)\n" +
-          "  - Notion Blog: https://bit.ly/techguidesbyskyler (Tech Guides)\n" +
+      case "contact":
+        appendTerminalLine("CHANNELS & CONTACT:\n" +
+          "  - Discord: @skylerproject_ (Direct DM)\n" +
+          "  - WhatsApp: https://wa.me/62817769084\n" +
+          "  - Email: diryaflop@gmail.com\n" +
+          "  - YouTube: https://www.youtube.com/JustSkylerProject\n" +
+          "  - Tiktok: https://www.tiktok.com/@skylerf1freak\n" +
           "  - Instagram: https://www.instagram.com/skylerproject_\n" +
-          "  - Github: https://github.com/skilerrr\n" +
-          "  - Whatsapp: https://wa.me/62817769084");
+          "  - Github: https://github.com/skilerrr");
         break;
 
       case "clear":
@@ -419,9 +500,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       default:
         if (currentLang === "id") {
-          appendTerminalLine("Kesalahan: Perintah '" + cleanCmd + "' tidak dikenali. Ketik 'help' untuk daftar perintah.");
+          appendTerminalLine("Kesalahan: Perintah '" + cleanCmd + "' tidak dikenali. Ketik 'help' atau 'work' untuk panduan.");
         } else {
-          appendTerminalLine("Error: Command '" + cleanCmd + "' not recognized. Type 'help' for available commands.");
+          appendTerminalLine("Error: Command '" + cleanCmd + "' not recognized. Type 'help' or 'work' for commands.");
         }
         break;
     }

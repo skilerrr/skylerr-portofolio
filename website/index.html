@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>skylerproject_ | Portfolio & Digital Space</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/skylerr (1).png">
+  <title>skylerproject_ | Portfolio, Media & Laptop Desk</title>
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicon-192.png">
+  <link rel="canonical" href="https://skylerproject.vercel.app">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,100 +23,115 @@
 
   <!-- SEO & Meta -->
   <meta name="description"
-    content="Portfolio digital skylerproject_. Developer, content creator, video editor, dan laptop enthusiast dengan desain Neo-Brutalist retro-pixel. Open for work and collaboration.">
+    content="skylerproject_ — Web Developer, Formula 1 short-form creator, and laptop hardware specialist based in Medan. Next.js, TypeScript, Laravel, video editing, and business laptop inspection desk.">
   <meta name="keywords"
-    content="skylerproject_, skyler, portfolio, developer, retro, web developer, indonesian, laptop enthusiast, video editor, discord skylerproject_">
+    content="skylerproject_, skyler, portofolio web developer medan, jasa cek laptop medan, laptop bekas medan, thinkpad medan, f1 meme tiktok, nextjs, typescript, laravel">
   <meta name="author" content="skylerproject_">
+  <meta name="theme-color" content="#16161a">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="skylerproject_ | Portfolio & Digital Space">
-  <meta property="og:description" content="Digital space of skylerproject_. Developer, content creator & laptop enthusiast. Open for work and collaboration.">
+  <meta property="og:title" content="skylerproject_ | Portfolio, Media & Laptop Desk">
+  <meta property="og:description"
+    content="Web developer, short-form F1 creator, and laptop hardware specialist in Medan. Explore code projects, viral clips, and business laptop sourcing desk.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://github.com/skilerrr">
-  <meta property="og:image" content="assets/skylerr (1).png">
+  <meta property="og:url" content="https://skylerproject.vercel.app">
+  <meta property="og:image" content="https://skylerproject.vercel.app/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="skylerproject_ | Portfolio, Media & Laptop Desk">
+  <meta name="twitter:description" content="Web developer, short-form F1 creator, and business laptop specialist in Medan.">
+  <meta name="twitter:image" content="https://skylerproject.vercel.app/assets/og-image.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "skylerproject_",
+    "url": "https://skylerproject.vercel.app",
+    "sameAs": [
+      "https://github.com/skilerrr",
+      "https://www.tiktok.com/@skylerproject_",
+      "https://www.youtube.com/@JustSkylerProject",
+      "https://www.instagram.com/skylerproject_"
+    ],
+    "jobTitle": "Web Developer & Content Creator",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Medan",
+      "addressRegion": "Sumatera Utara",
+      "addressCountry": "ID"
+    }
+  }
+  </script>
 </head>
 
 <body>
 
-  <!-- Background Audio Element -->
-  <audio id="bg-music" src="assets/Rex Orange County - Best Friend (Official Audio) - Rex Orange County (youtube).mp3"
-    loop></audio>
-
-  <!-- Screen Scanline Overlay (CRT Effect) -->
+  <!-- Screen Scanline Overlay (CRT Effect - Subtle) -->
   <div class="crt-overlay"></div>
 
-  <!-- Retro Loading Screen Overlay -->
-  <div id="retro-loader">
-    <div class="loader-panel">
-      <div class="loader-brand">
-        <span class="loader-brand-icon">▲</span>
-        <span class="loader-brand-name">SKYLERPROJECT_</span>
-      </div>
-      <div class="loader-divider"></div>
-      <div class="loader-terminal-output">
-        <div class="loader-line" id="load-line-1">&gt; SYSTEM BOOTSTRAP v1.1.0...</div>
-        <div class="loader-line" id="load-line-2">&gt; LOADING CORE ASSETS...</div>
-        <div class="loader-line" id="load-line-3">&gt; INITIALIZING AUDIO STREAM...</div>
-        <div class="loader-line" id="load-line-4">&gt; CONFIGURING DESIGN SYSTEM...</div>
-        <div class="loader-line status-line" id="load-line-5">&gt; STATUS: ALL SYSTEMS READY.</div>
-      </div>
-      <div class="loader-progress-wrap">
-        <div class="loader-progress-label">
-          <span>LOADING...</span>
-          <span id="loader-pct">0%</span>
-        </div>
-        <div class="loader-progress-track">
-          <div class="loader-progress-fill" id="loader-progress"></div>
-        </div>
-      </div>
-      <div class="enter-prompt" id="enter-prompt">
-        <span class="blink-fast">▲</span>&nbsp; CLICK ANYWHERE TO ENTER &nbsp;<span class="blink-fast">▲</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Grid Page Wrapper (hidden until loader dismissed) -->
-  <div class="page-wrapper page-hidden">
+  <!-- Main Grid Page Wrapper (Loaded directly with clean fade-in) -->
+  <div class="page-wrapper page-fade-in">
 
     <!-- Header / Navigation -->
-    <header class="main-header">
+    <header class="main-header glass-panel">
       <div class="header-logo">
         <span class="logo-blink">▲</span>
-        <h1 data-t="nav.logo">skylerproject_</h1>
+        <a href="#hero" class="logo-text" data-t="nav.logo">skylerproject_</a>
       </div>
 
-      <nav class="desktop-nav">
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
         <a href="#hero" class="nav-link" data-t="nav.home">HOME</a>
         <a href="#about" class="nav-link" data-t="nav.about">ABOUT</a>
         <a href="#projects" class="nav-link" data-t="nav.projects">PROJECTS</a>
-        <a href="#collaboration" class="nav-link nav-highlight" data-t="nav.collab">WORK WITH ME</a>
-        <a href="#media-channels" class="nav-link" data-t="nav.media">CHANNELS</a>
-        <a href="#terminal-section" class="nav-link" data-t="nav.terminal">TERMINAL</a>
+        <a href="#services" class="nav-link nav-highlight" data-t="nav.services">SERVICES</a>
+        <a href="#popular-videos" class="nav-link" data-t="nav.popular">TOP CLIPS</a>
+        <a href="#media-channels" class="nav-link" data-t="nav.channels">CHANNELS</a>
       </nav>
 
+      <!-- Header Controls: Lang, Theme, and Mobile Menu Toggle -->
       <div class="header-controls">
-        <!-- Retro Audio Player Controls -->
-        <div class="music-player">
-          <button id="music-play-btn" class="music-btn" aria-label="Toggle Audio">
-            <span class="music-icon">▶</span> <span class="music-text">PLAY SOUND</span>
-          </button>
-          <button id="music-vol-btn" class="music-btn" aria-label="Volume Level">
-            VOL: 10%
-          </button>
-        </div>
-
         <!-- Language Switcher -->
-        <div class="lang-selector">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="id">ID</button>
+        <div class="lang-selector glass-pill">
+          <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
         </div>
 
         <!-- Theme Toggle -->
-        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+        <button class="theme-toggle-btn glass-pill" id="theme-toggle" aria-label="Toggle Dark/Light Theme">
           <span class="theme-toggle-icon">☼</span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-menu-toggle glass-pill" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
       </div>
     </header>
+
+    <!-- Mobile Drawer Nav (Glass Floating Menu) -->
+    <nav class="mobile-nav-drawer glass-panel" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <div class="drawer-header">
+        <span class="drawer-title">// NAVIGATION</span>
+        <button class="drawer-close" id="drawer-close-btn" aria-label="Close Navigation">✕</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-link" data-t="nav.home">HOME</a>
+        <a href="#about" class="mobile-nav-link" data-t="nav.about">ABOUT</a>
+        <a href="#projects" class="mobile-nav-link" data-t="nav.projects">PROJECTS</a>
+        <a href="#services" class="mobile-nav-link nav-highlight" data-t="nav.services">SERVICES</a>
+        <a href="#popular-videos" class="mobile-nav-link" data-t="nav.popular">TOP CLIPS</a>
+        <a href="#media-channels" class="mobile-nav-link" data-t="nav.channels">CHANNELS</a>
+        <a href="#contact" class="mobile-nav-link" data-t="hero.cta_contact">CONTACT</a>
+      </div>
+    </nav>
 
     <!-- Main Content Area -->
     <main class="main-content">
@@ -123,61 +141,80 @@
         <div class="hero-grid">
 
           <div class="hero-left">
-            <div class="system-status">
+            <div class="system-status glass-pill">
               <span class="pulse-indicator"></span>
-              <span class="status-text" data-t="hero.welcome">SYSTEM INITIALIZED SUCCESSFULLY // STATUS OK</span>
+              <span class="status-text" data-t="hero.status">SYSTEM INITIALIZED // ALL CHANNELS ACTIVE</span>
             </div>
 
-            <h2 class="hero-title glitch-text" data-text="skylerproject_" data-t="hero.title">skylerproject_</h2>
+            <h1 class="hero-title glitch-text" data-text="skylerproject_" data-t="hero.title">skylerproject_</h1>
 
             <!-- Typewriter Container -->
-            <div class="typewriter-container">
+            <div class="typewriter-container glass-inset">
               <span class="prompt-arrow">&gt;</span>
-              <span id="typewriter" data-t="hero.subtitle">DEVELOPER // CONTENT CREATOR // TECH ENTHUSIAST</span>
+              <span id="typewriter" data-t="hero.subtitle">DEVELOPER // CONTENT CREATOR // LAPTOP SPECIALIST</span>
               <span class="terminal-cursor">█</span>
             </div>
 
+            <p class="hero-bio-lead" data-t="hero.bio">
+              Building sharp modern web apps, editing viral short-form motorsport content, and helping folks around Medan track down tested second-hand business laptops.
+            </p>
+
             <div class="hero-buttons-container">
               <div class="hero-buttons">
-                <a href="#collaboration" class="btn btn-primary btn-glow" data-t="hero.cta_collab">WORK WITH ME</a>
-                <a href="#projects" class="btn btn-secondary" data-t="hero.cta_explore">EXPLORE PROJECTS</a>
-                <a href="#about" class="btn btn-secondary" data-t="hero.cta_about">ABOUT ME</a>
+                <a href="#services" class="btn btn-primary btn-glow" data-t="hero.cta_services">SERVICES & LAPTOPS</a>
+                <a href="#projects" class="btn btn-secondary glass-btn" data-t="hero.cta_projects">EXPLORE CODE</a>
+                <a href="#contact" class="btn btn-secondary glass-btn" data-t="hero.cta_contact">LET'S TALK</a>
+              </div>
+
+              <!-- Quick Stat Badges -->
+              <div class="hero-stats-row">
+                <div class="hero-stat-card glass-panel">
+                  <span class="stat-num">658K+</span>
+                  <span class="stat-label" data-t="hero.stats_tiktok_views">TikTok Likes</span>
+                </div>
+                <div class="hero-stat-card glass-panel">
+                  <span class="stat-num">9.6K+</span>
+                  <span class="stat-label" data-t="hero.stats_yt_subs">YouTube Subs</span>
+                </div>
+                <div class="hero-stat-card glass-panel">
+                  <span class="stat-num">MEDAN</span>
+                  <span class="stat-label">On-site Desk</span>
+                </div>
               </div>
 
               <!-- Social shortcuts placed immediately in Hero page -->
               <div class="hero-socials">
-                <a href="#collaboration" class="social-circle-link discord-highlight" title="Discord: @skylerproject_" id="hero-discord-link">
+                <a href="#contact" class="social-circle-link discord-highlight" title="Discord: @skylerproject_">
                   <span class="social-label">Discord</span>
                 </a>
-                <a href="https://github.com/skilerrr" target="_blank" class="social-circle-link" title="Github">
+                <a href="https://github.com/skilerrr" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="Github">
                   <span class="social-label">Github</span>
                 </a>
-                <a href="https://www.instagram.com/skylerproject_" target="_blank" class="social-circle-link"
-                  title="Instagram">
+                <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="social-circle-link tiktok-highlight" title="TikTok @skylerproject_">
+                  <span class="social-label">TikTok</span>
+                </a>
+                <a href="https://www.youtube.com/@JustSkylerProject" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="YouTube @JustSkylerProject">
+                  <span class="social-label">YouTube</span>
+                </a>
+                <a href="https://www.instagram.com/skylerproject_" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="Instagram">
                   <span class="social-label">Instagram</span>
                 </a>
-                <a href="https://www.tiktok.com/@skylerf1freak" target="_blank" class="social-circle-link"
-                  title="Tiktok">
-                  <span class="social-label">Tiktok</span>
-                </a>
-                <a href="https://www.youtube.com/JustSkylerProject" target="_blank" class="social-circle-link"
-                  title="YouTube">
-                  <span class="social-label">Youtube</span>
-                </a>
-                <a href="https://wa.me/62817769084" target="_blank" class="social-circle-link" title="Whatsapp">
-                  <span class="social-label">Whatsapp</span>
+                <a href="https://wa.me/62817769084" target="_blank" rel="noopener noreferrer" class="social-circle-link wa-highlight" title="WhatsApp Business Desk">
+                  <span class="social-label">WhatsApp</span>
                 </a>
               </div>
             </div>
           </div>
 
           <div class="hero-right">
-            <!-- Profile circle inside retro stepped frame -->
+            <!-- Profile circle inside matte glass frame -->
             <div class="profile-container">
-              <div class="pixel-border-wrapper">
-                <div class="profile-circle">
-                  <!-- User's profile image updated to skylerr (1).png -->
-                  <img src="assets/skylerr (1).png" alt="skylerproject_" class="profile-img">
+              <div class="glass-frame-wrapper">
+                <div class="profile-circle glass-card">
+                  <img src="assets/profile.jpg" alt="skylerproject_ profile" class="profile-img" width="320" height="320" loading="eager">
+                </div>
+                <div class="profile-handle-tag glass-pill">
+                  <span class="handle-prefix">@</span><span class="handle-val">skylerproject_</span>
                 </div>
               </div>
             </div>
@@ -186,318 +223,495 @@
         </div>
       </section>
 
-      <!-- ABOUT & SKILLS SECTION -->
+      <!-- ABOUT & STACK SECTION -->
       <section id="about" class="section about-section">
-        <div class="section-header-box">
-          <h3 data-t="about.title">PROFILE & COMPETENCY</h3>
+        <div class="section-header-box glass-panel">
+          <span class="section-idx">// 01</span>
+          <h2 class="section-title" data-t="about.title">PROFILE & CORE STACK</h2>
         </div>
 
         <div class="about-grid-simplified">
-          <div class="bio-panel-wide">
+          <div class="bio-panel-wide glass-card">
             <p class="bio-text" data-t="about.bio">
-              Hello! I am skylerproject_, a developer and digital content creator. My main focus is on building modern,
-              high-performance web applications with striking visual aesthetics. I love combining vintage computer
-              architectures and styling with modern web technologies.
+              Hey, I'm skylerproject_ — software developer, short-form motorsport creator, and laptop hardware nerd based in Medan, Indonesia. I mix modern web stacks (TypeScript, Next.js, Laravel) with clean neo-brutalist / retro aesthetics, edit dynamic gaming & F1 clips, and run on-the-ground laptop sourcing + pre-buy inspection.
             </p>
+            <div class="bio-meta-row">
+              <div class="bio-meta-item">
+                <span class="meta-label">LOCATION:</span>
+                <span class="meta-val">Medan, North Sumatra, ID</span>
+              </div>
+              <div class="bio-meta-item">
+                <span class="meta-label">FOCUS:</span>
+                <span class="meta-val">Full-Stack Web & Content & Hardware Desk</span>
+              </div>
+            </div>
           </div>
 
-          <div class="skills-panel-wide">
-            <h4 data-t="about.skills_title">CORE COMPETENCIES</h4>
+          <div class="skills-panel-wide glass-card">
+            <h3 class="panel-subtitle" data-t="about.skills_title">WHAT I WORK WITH</h3>
             <div class="skills-grid">
-              <div class="skill-chip">HTML5/CSS3</div>
-              <div class="skill-chip">Javascript</div>
-              <div class="skill-chip">PHP</div>
-              <div class="skill-chip">Typescript</div>
-              <div class="skill-chip">UI/UX</div>
-              <div class="skill-chip">Video Editing</div>
-              <div class="skill-chip">Laptop & Hardware</div>
+              <div class="skill-chip glass-pill">TypeScript</div>
+              <div class="skill-chip glass-pill">Next.js 15</div>
+              <div class="skill-chip glass-pill">React</div>
+              <div class="skill-chip glass-pill">Supabase</div>
+              <div class="skill-chip glass-pill">Laravel / PHP</div>
+              <div class="skill-chip glass-pill">Tailwind CSS</div>
+              <div class="skill-chip glass-pill">Vanilla HTML/JS</div>
+              <div class="skill-chip glass-pill">Video Production (Premiere/CapCut)</div>
+              <div class="skill-chip glass-pill">Hardware Stress Testing (AIDA64/FurMark)</div>
+              <div class="skill-chip glass-pill">Windows Debloat & Thermal Tuning</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PROJECTS SECTION -->
+      <!-- PROJECTS SECTION (REAL CODE PROJECTS) -->
       <section id="projects" class="section projects-section">
-        <div class="section-header-box">
-          <h3 data-t="projects.title">FEATURED PROJECT</h3>
+        <div class="section-header-box glass-panel">
+          <span class="section-idx">// 02</span>
+          <h2 class="section-title" data-t="projects.title">FEATURED CODE & APPS</h2>
+          <span class="section-subtitle" data-t="projects.subtitle">Production-ready apps and developer tooling built from scratch.</span>
         </div>
 
-        <div class="projects-grid-single">
-          <!-- Featured Card: Tech Guides by skylerproject_ -->
-          <div class="project-card featured-card-wide">
+        <div class="projects-grid">
+          <!-- Project 1: GrayPlasma Web -->
+          <article class="project-card glass-card">
             <div class="card-header">
-              <span class="card-badge" data-t="projects.featured">PRIMARY</span>
-              <span class="card-tech">NOTION RESOURCE</span>
+              <span class="card-badge badge-primary" data-t="projects.p1_tag">PRIMARY STACK</span>
+              <span class="card-tech">NEXT.JS 15 // SUPABASE // TAILWIND</span>
             </div>
             <div class="card-body">
-              <h4 data-t="projects.techguides_title">Tech Guides by skylerproject_</h4>
-              <p data-t="projects.techguides_desc">Comprehensive guides, advanced programming tutorials, and desktop
-                system performance optimization tips.</p>
+              <h3 class="project-name" data-t="projects.p1_title">GrayPlasma Web</h3>
+              <p class="project-desc" data-t="projects.p1_desc">Modern laboratory & scientific services portal built with Next.js 15, TypeScript, Supabase backend, and Tailwind CSS. Production-grade auth, row-level security, and responsive UI.</p>
             </div>
             <div class="card-footer">
-              <a href="https://bit.ly/techguidesbyskyler" target="_blank" class="card-link">
-                <span data-t="projects.view_link">VISIT RESOURCE</span> ↗
+              <a href="https://gray-plasma-web.vercel.app" target="_blank" rel="noopener noreferrer" class="card-link btn-glow-subtle">
+                <span data-t="projects.view_demo">LIVE DEMO</span> ↗
+              </a>
+              <a href="https://github.com/skilerrr/GrayPlasma-Web" target="_blank" rel="noopener noreferrer" class="card-link-sec">
+                <span data-t="projects.view_repo">SOURCE CODE</span> ↗
               </a>
             </div>
-          </div>
+          </article>
+
+          <!-- Project 2: Shipbox Cargo Delivery System -->
+          <article class="project-card glass-card">
+            <div class="card-header">
+              <span class="card-badge badge-secondary" data-t="projects.p2_tag">FULL STACK</span>
+              <span class="card-tech">LARAVEL // PHP // BLADE</span>
+            </div>
+            <div class="card-body">
+              <h3 class="project-name" data-t="projects.p2_title">Shipbox Cargo Logistic</h3>
+              <p class="project-desc" data-t="projects.p2_desc">End-to-end freight & shipment tracking platform powered by Laravel, PHP, and modern CSS. Manifest logging, parcel lookup, and administrative backoffice.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/skilerrr/Shipbox---Delivery-Web-System" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span data-t="projects.view_repo">SOURCE CODE</span> ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Tech Guides by Skyler (Notion) -->
+          <article class="project-card glass-card">
+            <div class="card-header">
+              <span class="card-badge badge-accent" data-t="projects.p3_tag">KNOWLEDGE BASE</span>
+              <span class="card-tech">NOTION RESOURCE // OPTIMIZATION</span>
+            </div>
+            <div class="card-body">
+              <h3 class="project-name" data-t="projects.p3_title">Tech Guides by Skyler</h3>
+              <p class="project-desc" data-t="projects.p3_desc">Curated digital workspace covering Windows debloating, thermal tuning, development workflows, and system optimization writeups.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://bit.ly/techguidesbyskyler" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span data-t="projects.view_resource">READ GUIDES</span> ↗
+              </a>
+            </div>
+          </article>
         </div>
       </section>
 
-      <!-- OPEN TO WORK & COLLABORATION SECTION (NEW SECTION) -->
-      <section id="collaboration" class="section collab-section">
-        <div class="section-header-box">
-          <h3 data-t="collab.title">OPEN TO WORK & COLLABORATION</h3>
+      <!-- SERVICES & MEDAN HARDWARE DESK -->
+      <section id="services" class="section services-section">
+        <div class="section-header-box glass-panel">
+          <span class="section-idx">// 03</span>
+          <h2 class="section-title" data-t="services.title">SERVICES & MEDAN HARDWARE DESK</h2>
         </div>
 
         <!-- Availability Status Bar -->
-        <div class="collab-status-bar">
+        <div class="collab-status-bar glass-pill">
           <div class="status-pulse-wrapper">
             <span class="live-dot-pulse"></span>
-            <span class="status-badge-text" data-t="collab.status">STATUS: OPEN FOR FREELANCE & COLLABORATION</span>
+            <span class="status-badge-text" data-t="services.status">STATUS: OPEN FOR FREELANCE & COMMISSIONS</span>
           </div>
-          <span class="turnaround-tag">DIRECT DM // FAST RESPONSE</span>
+          <span class="turnaround-tag">MEDAN AREA COD & DIRECT DM</span>
         </div>
 
-        <div class="collab-intro-box">
-          <p class="collab-intro-text" data-t="collab.intro">
-            Have an exciting project, need high-impact custom web development, video production, or want to discuss laptop specs & hardware setup? Let's build something awesome together.
+        <div class="collab-intro-box glass-inset">
+          <p class="collab-intro-text" data-t="services.intro">
+            Need custom web development, dynamic short-form edits, or looking to buy a clean second-hand business laptop in Medan? Reach out directly.
           </p>
         </div>
 
         <!-- 3 Core Offerings Grid -->
         <div class="collab-services-grid">
           <!-- Card 1: Web Development -->
-          <div class="service-retro-card">
+          <div class="service-retro-card glass-card">
             <div class="service-card-header">
-              <span class="service-badge" data-t="collab.card1_badge">CODE & BUILD</span>
+              <span class="service-badge" data-t="services.card1_badge">CODE & BUILD</span>
               <span class="service-idx">01</span>
             </div>
             <div class="service-card-body">
               <div class="service-icon-banner">⚡ WEB DEV</div>
-              <h4 data-t="collab.card1_title">Web Development</h4>
-              <p data-t="collab.card1_desc">Bespoke Neo-Brutalist & modern web apps, responsive landing pages, interactive micro-sites with smooth performance and unique retro aesthetics.</p>
+              <h3 class="service-title" data-t="services.card1_title">Web Development</h3>
+              <p data-t="services.card1_desc">Neo-brutalist landing pages, modern React / Next.js web applications, and snappy responsive microsites engineered for speed.</p>
               <div class="service-tags">
-                <span>HTML/CSS</span>
-                <span>JavaScript</span>
-                <span>TypeScript</span>
-                <span>PHP</span>
-                <span>Responsive</span>
+                <span class="glass-pill">Next.js 15</span>
+                <span class="glass-pill">TypeScript</span>
+                <span class="glass-pill">Tailwind</span>
+                <span class="glass-pill">Laravel</span>
+                <span class="glass-pill">Supabase</span>
               </div>
             </div>
           </div>
 
           <!-- Card 2: Video Editing & Production -->
-          <div class="service-retro-card">
+          <div class="service-retro-card glass-card">
             <div class="service-card-header">
-              <span class="service-badge" data-t="collab.card2_badge">MEDIA & MOTION</span>
+              <span class="service-badge" data-t="services.card2_badge">MEDIA & MOTION</span>
               <span class="service-idx">02</span>
             </div>
             <div class="service-card-body">
               <div class="service-icon-banner">🎬 VIDEO & MOTION</div>
-              <h4 data-t="collab.card2_title">Video Editing & Production</h4>
-              <p data-t="collab.card2_desc">High-retention short-form edits (TikTok / Reels / Shorts), YouTube gaming showcases, pacing optimization, and dynamic motion transitions.</p>
+              <h3 class="service-title" data-t="services.card2_title">Video Editing & Production</h3>
+              <p data-t="services.card2_desc">High-retention TikTok, Reels & YouTube Shorts. Pacing optimization, motorsport ragebait memes, and gaming showcases.</p>
               <div class="service-tags">
-                <span>Short-form</span>
-                <span>YouTube Edits</span>
-                <span>Color & Sound</span>
-                <span>Pacing</span>
+                <span class="glass-pill">Short-Form</span>
+                <span class="glass-pill">TikTok Viral</span>
+                <span class="glass-pill">F1 Edits</span>
+                <span class="glass-pill">YouTube Gaming</span>
               </div>
             </div>
           </div>
 
-          <!-- Card 3: Laptop Enthusiast -->
-          <div class="service-retro-card highlighted-enthusiast-card">
+          <!-- Card 3: Business Laptop Sourcing & Check-up (Featured Medan) -->
+          <div class="service-retro-card glass-card highlighted-enthusiast-card">
             <div class="service-card-header">
-              <span class="service-badge" data-t="collab.card3_badge">DISCUSS & CONSULT</span>
+              <span class="service-badge badge-medan" data-t="services.card3_badge">MEDAN AREA // ON-SITE</span>
               <span class="service-idx">03</span>
             </div>
             <div class="service-card-body">
-              <div class="service-icon-banner">💻 LAPTOP ENTHUSIAST</div>
-              <h4 data-t="collab.card3_title">Laptop Enthusiast</h4>
-              <div class="enthusiast-callout" data-t="collab.card3_subtitle">Open to talk with!</div>
-              <p data-t="collab.card3_desc">Always excited to talk about laptop architectures, hardware buying advice, thermal tuning, workflow setups, and OS debloating/optimizations.</p>
+              <div class="service-icon-banner">💻 BUSINESS LAPTOPS</div>
+              <h3 class="service-title" data-t="services.card3_title">Laptop Sourcing & Pre-Buy Check</h3>
+              <div class="enthusiast-callout">Khusus Area Kota Medan & Sekitarnya</div>
+              <p data-t="services.card3_desc">Looking for a reliable second-hand laptop in Medan? I help you hunt vetted business units (ThinkPad, Latitude, EliteBook) and run comprehensive diagnostic checks before purchase. Note: physical teardown & thermal repaste can be arranged with a trusted partner (negotiable).</p>
               <div class="service-tags">
-                <span>Hardware Specs</span>
-                <span>Laptop Recs</span>
-                <span>OS Tweaks</span>
-                <span>Setup Chat</span>
+                <span class="glass-pill">ThinkPad T/X</span>
+                <span class="glass-pill">Dell Latitude</span>
+                <span class="glass-pill">Diagnostics</span>
+                <span class="glass-pill">SSD & Battery Check</span>
+                <span class="glass-pill">COD Medan</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Direct Discord Connect Matrix (Primary CTA) -->
-        <div class="discord-direct-matrix">
-          <div class="matrix-glow-border">
-            <div class="matrix-content">
-              <div class="matrix-header">
-                <div class="discord-brand-pill">
-                  <span class="discord-icon-sym">💬</span>
-                  <span class="discord-brand-label">DISCORD DIRECT CHANNEL</span>
-                </div>
-                <span class="direct-badge">PRIMARY CONTACT</span>
-              </div>
+        <!-- DEEP-DIVE MEDAN LAPTOP SERVICE DESK BOX -->
+        <div class="medan-desk-box glass-card">
+          <div class="desk-header">
+            <div class="desk-badge glass-pill">
+              <span class="desk-dot"></span>
+              <span data-t="services.medan_loc">MEDAN, NORTH SUMATRA & SURROUNDINGS</span>
+            </div>
+            <h3 class="desk-title" data-t="services.medan_title">Second-hand Business Laptops & Pre-Buy Inspection Desk</h3>
+            <p class="desk-desc" data-t="services.medan_desc">
+              Buying used hardware is a minefield. I track down vetted corporate units (ThinkPad T/X, Dell Latitude 5000/7000, HP EliteBook) and run comprehensive on-site diagnostic checks before you commit cash.
+            </p>
+          </div>
 
-              <h4 class="matrix-title" data-t="collab.discord_heading">DIRECT MESSAGE VIA DISCORD</h4>
-              <p class="matrix-desc" data-t="collab.discord_sub">
-                Fastest way to reach me directly for projects, collaboration, or tech talks:
-              </p>
+          <div class="desk-features-grid">
+            <div class="desk-feat-item glass-inset">
+              <div class="feat-icon">🔬</div>
+              <h4 class="feat-title" data-t="services.feature1_title">Hardware Stress Testing</h4>
+              <p class="feat-desc" data-t="services.feature1_desc">AIDA64 / Cinebench thermal loop, FurMark / OCCT stability checks, SSD health (CrystalDiskInfo), and battery cycle-count analysis.</p>
+            </div>
 
-              <div class="discord-handle-row">
-                <div class="discord-id-badge" id="discord-id-display" title="Click to copy username">
-                  <span class="tag-prefix">@</span>
-                  <span class="tag-name">skylerproject_</span>
-                </div>
+            <div class="desk-feat-item glass-inset">
+              <div class="feat-icon">🎯</div>
+              <h4 class="feat-title" data-t="services.feature2_title">Business Unit Sourcing</h4>
+              <p class="feat-desc" data-t="services.feature2_desc">I locate pristine off-lease enterprise laptops tailored to your exact budget — sturdy magnesium chassis, upgradable RAM, and matte screens.</p>
+            </div>
 
-                <div class="discord-action-buttons">
-                  <button class="btn btn-discord-copy" id="discord-copy-btn" aria-label="Copy Discord Username">
-                    <span class="copy-icon">📋</span>
-                    <span class="copy-btn-label" data-t="collab.copy_btn">COPY USERNAME</span>
-                  </button>
-                  <a href="https://discord.com/channels/@me" target="_blank" class="btn btn-discord-open" data-t="collab.open_discord">
-                    OPEN DISCORD APP ↗
-                  </a>
-                </div>
-              </div>
+            <div class="desk-feat-item glass-inset">
+              <div class="feat-icon">⚡</div>
+              <h4 class="feat-title" data-t="services.feature3_title">Clean OS & Performance Tuning</h4>
+              <p class="feat-desc" data-t="services.feature3_desc">Fresh Windows debloat, telemetry stripping, undervolt / P-state tuning, thermal paste refresh (Honeywell PTM7950 / Arctic MX-6).</p>
+            </div>
 
-              <!-- Toast notification inside Discord widget -->
-              <div class="copy-feedback-banner" id="copy-feedback-banner">
-                <span class="feedback-icon">✔</span> USERNAME COPIED: <strong>skylerproject_</strong> (Add me on Discord!)
-              </div>
+            <div class="desk-feat-item glass-inset">
+              <div class="feat-icon">📍</div>
+              <h4 class="feat-title" data-t="services.feature4_title">Medan Meetup & CoD</h4>
+              <p class="feat-desc" data-t="services.feature4_desc">Direct meetups in Medan (Poltekkes, USU, Ringroad, Marelan) so you can touch the hardware and verify test runs in person.</p>
+            </div>
+          </div>
 
-              <!-- Secondary alternative links -->
-              <div class="matrix-secondary-links">
-                <span class="secondary-label" data-t="collab.alt_channels">Or reach out via other channels:</span>
-                <div class="secondary-buttons">
-                  <a href="https://wa.me/62817769084" target="_blank" class="sec-link-chip">
-                    <span>WhatsApp</span> ↗
-                  </a>
-                  <a href="mailto:diryaflop@gmail.com" class="sec-link-chip">
-                    <span>Email</span> ↗
-                  </a>
-                  <a href="https://www.instagram.com/skylerproject_" target="_blank" class="sec-link-chip">
-                    <span>Instagram</span> ↗
-                  </a>
-                </div>
-              </div>
-
+          <!-- Customer Wall / Satisfied Customers (Reserved Showcase) -->
+          <div class="customer-wall-box glass-panel">
+            <div class="customer-wall-header">
+              <span class="wall-badge" data-t="services.customer_wall_label">PORTFOLIO & SATISFIED CUSTOMERS</span>
+              <h4 class="wall-title" data-t="services.customer_wall_heading">Customer Wall (Coming Soon)</h4>
+            </div>
+            <p class="wall-note" data-t="services.customer_wall_note">
+              Inspection logs and buyer feedback are being compiled. Space reserved for upcoming satisfied customer showcases.
+            </p>
+            <div class="wall-cta-row">
+              <a href="https://wa.me/62817769084?text=Halo%20Skyler,%20gw%20mau%20konsultasi%20/%20cari%20laptop%20sekenan%20bisnis%20di%20Medan" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow-subtle" data-t="services.cta_wa">
+                CHAT VIA WHATSAPP ↗
+              </a>
             </div>
           </div>
         </div>
 
       </section>
 
-      <!-- DETAILED BIOGRAPHY & MEDIA CHANNELS SECTION -->
-      <section id="media-channels" class="section media-channels-section">
-        <div class="section-header-box">
-          <h3 data-t="media.title">IN-DEPTH BIOGRAPHY & MEDIA CHANNELS</h3>
+      <!-- POPULAR VIDEOS & VIRAL CLIPS SECTION (TIKTOK & YOUTUBE) -->
+      <section id="popular-videos" class="section popular-videos-section">
+        <div class="section-header-box glass-panel">
+          <span class="section-idx">// 04</span>
+          <h2 class="section-title" data-t="popular.title">FEATURED & VIRAL CLIPS</h2>
+          <span class="section-subtitle" data-t="popular.subtitle">Top-performing short-form motorsport memes & YouTube gaming showcases.</span>
         </div>
 
-        <div class="media-intro">
-          <p class="bio-long-text" data-t="media.bio_long">
-            I'm a tech-focused content creator and developer. I split my creative energy between writing clean code and
-            producing engaging media for my audience. On YouTube, I dive deep into virtual driving physics and
-            multiplayer gaming. On Tiktok, I follow my passion for motorsport, editing memes and information about
-            Formula 1. I also maintain a highly detailed personal Notion blog where I publish step-by-step guides on
-            operating system tweaks, setup reviews, and development methodologies.
-          </p>
+        <!-- TikTok Showcase Card (with attached profile screenshot) -->
+        <div class="tiktok-viral-spotlight glass-card">
+          <div class="spotlight-grid">
+            <div class="spotlight-media">
+              <img src="assets/tiktok-profile.jpg" alt="TikTok @skylerproject_ profile showcase" class="spotlight-img" width="938" height="371" loading="lazy">
+              <div class="spotlight-badge glass-pill">
+                <span class="badge-icon">🔥</span>
+                <span>658.9K+ TIKTOK LIKES</span>
+              </div>
+            </div>
+            <div class="spotlight-info">
+              <div class="spotlight-tag" data-t="popular.pinned">PINNED VIRAL</div>
+              <h3 class="spotlight-title">Formula 1 Memes & Motorsport Ragebait</h3>
+              <p class="spotlight-desc">
+                High-voltage motorsport edits covering the Singapore GP, Ferrari strategic pain, Max Verstappen clips, and paddock humor under <strong>@skylerproject_</strong>.
+              </p>
+              <div class="pinned-clips-list">
+                <div class="clip-pill glass-pill">
+                  <span class="clip-title">"BONE BEAT SINGA"</span>
+                  <span class="clip-views">316.2K views</span>
+                </div>
+                <div class="clip-pill glass-pill">
+                  <span class="clip-title">"takkan nak maki depan-depan!"</span>
+                  <span class="clip-views">477.2K views</span>
+                </div>
+                <div class="clip-pill glass-pill">
+                  <span class="clip-title">"RAPSODI // Sialnya Leclerc"</span>
+                  <span class="clip-views">1.24M views</span>
+                </div>
+              </div>
+              <div class="spotlight-actions">
+                <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow" data-t="popular.view_btn">
+                  WATCH ON TIKTOK ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popular YouTube Videos Grid -->
+        <div class="popular-yt-grid">
+          <!-- Clip 1: 10 Billion CDID Secret -->
+          <article class="yt-video-card glass-card">
+            <div class="yt-thumb-wrap">
+              <img src="assets/yt-1.jpg" alt="10 BILLION A DAY - CDID 2.4" class="yt-thumb" width="480" height="270" loading="lazy">
+              <span class="yt-duration-badge glass-pill">13:28</span>
+              <span class="yt-view-badge glass-pill">35K VIEWS</span>
+            </div>
+            <div class="yt-card-body">
+              <span class="yt-cat-tag" data-t="popular.yt_highlight">TOP VIEWED</span>
+              <h4 class="yt-title">10 BILLION A DAY, THIS IS THE SECRET TO GETTING RICH QUICK ON CDID!</h4>
+              <p class="yt-meta">JustSkyler Project • Roblox CDID 2.4</p>
+            </div>
+            <div class="yt-card-footer">
+              <a href="https://www.youtube.com/watch?v=GdJjdjE-fF4" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span data-t="popular.view_btn">WATCH CLIP</span> ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Clip 2: Tutorial Cara Join CDIDSRP -->
+          <article class="yt-video-card glass-card">
+            <div class="yt-thumb-wrap">
+              <img src="assets/yt-2.jpg" alt="Tutorial Cara Join CDIDSRP" class="yt-thumb" width="480" height="270" loading="lazy">
+              <span class="yt-duration-badge glass-pill">02:56</span>
+              <span class="yt-view-badge glass-pill">16K VIEWS</span>
+            </div>
+            <div class="yt-card-body">
+              <span class="yt-cat-tag" data-t="popular.yt_highlight">TOP VIEWED</span>
+              <h4 class="yt-title">Tutorial Cara Join CDIDSRP // Jadi Civilian Di CDIDSRP</h4>
+              <p class="yt-meta">JustSkyler Project • Community Guide</p>
+            </div>
+            <div class="yt-card-footer">
+              <a href="https://www.youtube.com/watch?v=nv0PZKFJSeE" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span data-t="popular.view_btn">WATCH CLIP</span> ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Clip 3: 11 Billion AFK Grind CDID -->
+          <article class="yt-video-card glass-card">
+            <div class="yt-thumb-wrap">
+              <img src="assets/yt-3.jpg" alt="11 Billion Per Day AFK Grind CDID" class="yt-thumb" width="480" height="270" loading="lazy">
+              <span class="yt-duration-badge glass-pill">13:00</span>
+              <span class="yt-view-badge glass-pill">11K VIEWS</span>
+            </div>
+            <div class="yt-card-body">
+              <span class="yt-cat-tag" data-t="popular.yt_highlight">TOP VIEWED</span>
+              <h4 class="yt-title">11 Billion Per Day, The Hottest Spot for AFK Grind CDID!</h4>
+              <p class="yt-meta">JustSkyler Project • Grinding Barista East Java</p>
+            </div>
+            <div class="yt-card-footer">
+              <a href="https://www.youtube.com/watch?v=A82WxQxG2ag" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span data-t="popular.view_btn">WATCH CLIP</span> ↗
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- MEDIA CHANNELS SECTION -->
+      <section id="media-channels" class="section media-channels-section">
+        <div class="section-header-box glass-panel">
+          <span class="section-idx">// 05</span>
+          <h2 class="section-title" data-t="media.title">MEDIA HUBS & BLOG</h2>
+          <span class="section-subtitle" data-t="media.desc">Follow my latest motorsport edits, car cruising sessions, and tech documentation across the web.</span>
         </div>
 
         <div class="media-channels-grid">
           <!-- YouTube Channel Card -->
-          <div class="media-card">
+          <div class="media-card glass-card">
             <div class="media-thumbnail-container">
-              <img src="assets/Screenshot YouTube.png" alt="YouTube CDID Roblox Gameplay" class="media-thumbnail">
+              <img src="assets/media-youtube.jpg" alt="YouTube JustSkyler Project Channel" class="media-thumbnail" width="480" height="270" loading="lazy">
             </div>
             <div class="media-card-body">
-              <h4 data-t="media.youtube_title">YouTube: Roblox Gaming</h4>
-              <p data-t="media.youtube_desc">Mainly featuring 'Car Driving Indonesia' (CDID) Roblox gameplay. I record
-                races, car reviews, custom builds, and multiplayer cruising events.</p>
+              <h3 class="media-card-title" data-t="media.yt_title">YouTube: CDID & Gaming</h3>
+              <p class="media-card-desc" data-t="media.yt_desc">Mainly featuring 'Car Driving Indonesia' (CDID) Roblox cruises, car reviews, custom builds, and multiplayer races.</p>
             </div>
             <div class="media-card-footer">
-              <a href="https://www.youtube.com/JustSkylerProject" target="_blank" class="btn btn-media-link"
-                data-t="media.visit">OPEN CHANNEL</a>
+              <a href="https://www.youtube.com/@JustSkylerProject" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn" data-t="media.open">
+                OPEN CHANNEL ↗
+              </a>
             </div>
           </div>
 
-          <!-- Tiktok Channel Card -->
-          <div class="media-card">
+          <!-- TikTok Channel Card -->
+          <div class="media-card glass-card">
             <div class="media-thumbnail-container">
-              <img src="assets/Screenshot Tiktok.png" alt="Tiktok F1 Memes" class="media-thumbnail">
+              <img src="assets/tiktok-profile.jpg" alt="TikTok @skylerproject_ profile" class="media-thumbnail" width="480" height="270" loading="lazy">
             </div>
             <div class="media-card-body">
-              <h4 data-t="media.tiktok_title">Tiktok: Formula 1 Hub</h4>
-              <p data-t="media.tiktok_desc">Sharing high-energy Formula 1 memes, historical facts, race summaries, and
-                general paddock gossip.</p>
+              <h3 class="media-card-title" data-t="media.tiktok_title">TikTok: Formula 1 Hub</h3>
+              <p class="media-card-desc" data-t="media.tiktok_desc">Motorsport ragebait, race highlights, Singapore GP chaos, and F1 driver memes under @skylerproject_.</p>
             </div>
             <div class="media-card-footer">
-              <a href="https://www.tiktok.com/@skylerf1freak" target="_blank" class="btn btn-media-link"
-                data-t="media.visit">OPEN CHANNEL</a>
+              <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn" data-t="media.open">
+                OPEN CHANNEL ↗
+              </a>
             </div>
           </div>
 
           <!-- Notion Blog Card -->
-          <div class="media-card">
+          <div class="media-card glass-card">
             <div class="media-thumbnail-container">
-              <img src="assets/Screenshot Notion Site.png" alt="Notion Personal Blog" class="media-thumbnail">
+              <img src="assets/media-notion.jpg" alt="Notion Tech Guides" class="media-thumbnail" width="480" height="270" loading="lazy">
             </div>
             <div class="media-card-body">
-              <h4 data-t="media.blog_title">Notion: Personal Blog</h4>
-              <p data-t="media.blog_desc">A dedicated digital space hosting my custom tech guides, command line
-                documentation, and code explanations.</p>
+              <h3 class="media-card-title" data-t="media.notion_title">Notion: Tech Guides</h3>
+              <p class="media-card-desc" data-t="media.notion_desc">A detailed digital space hosting setup recommendations, laptop purchase guidelines, and code snippets.</p>
             </div>
             <div class="media-card-footer">
-              <a href="https://bit.ly/techguidesbyskyler" target="_blank" class="btn btn-media-link"
-                data-t="media.visit">OPEN CHANNEL</a>
+              <a href="https://bit.ly/techguidesbyskyler" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn" data-t="media.open">
+                OPEN CHANNEL ↗
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- INTERACTIVE TERMINAL SECTION -->
-      <section id="terminal-section" class="section terminal-section">
-        <div class="terminal-window">
-          <div class="terminal-bar">
-            <div class="terminal-dot red"></div>
-            <div class="terminal-dot yellow"></div>
-            <div class="terminal-dot green"></div>
-            <span class="terminal-window-title" data-t="terminal.title">INTERACTIVE SHELL v1.1.0</span>
-          </div>
-
-          <div class="terminal-screen" id="terminal-screen">
-            <div class="terminal-output" id="terminal-output">
-              <div class="output-line" data-t="terminal.welcome">Welcome to skylerproject_ interactive shell. Type
-                'help' or 'work' to list available system commands.</div>
+      <!-- DIRECT CONTACT SECTION (DISCORD MATRIX + DIRECT LINKS) -->
+      <section id="contact" class="section contact-section">
+        <div class="discord-direct-matrix glass-card">
+          <div class="matrix-content">
+            <div class="matrix-header">
+              <div class="discord-brand-pill glass-pill">
+                <span class="discord-icon-sym">💬</span>
+                <span class="discord-brand-label">DISCORD DIRECT CHANNEL</span>
+              </div>
+              <span class="direct-badge glass-pill">PRIMARY CONTACT</span>
             </div>
 
-            <div class="terminal-input-line">
-              <span class="terminal-prompt">guest@skylerproject_:~$</span>
-              <input type="text" id="terminal-cli" autocomplete="off"
-                data-t-placeholder="terminal.placeholder" placeholder="Type command...">
-            </div>
-          </div>
+            <h3 class="matrix-title" data-t="contact.discord_heading">DIRECT MESSAGE VIA DISCORD</h3>
+            <p class="matrix-desc" data-t="contact.discord_sub">
+              Fastest way to get in touch for web projects, video edits, or laptop questions in Medan:
+            </p>
 
-          <!-- Terminal Quick Action Helpers -->
-          <div class="terminal-helpers">
-            <button class="helper-btn" data-cmd="help">help</button>
-            <button class="helper-btn" data-cmd="work">work</button>
-            <button class="helper-btn" data-cmd="discord">discord</button>
-            <button class="helper-btn" data-cmd="about">about</button>
-            <button class="helper-btn" data-cmd="skills">skills</button>
-            <button class="helper-btn" data-cmd="projects">projects</button>
-            <button class="helper-btn" data-cmd="socials">socials</button>
-            <button class="helper-btn" data-cmd="clear">clear</button>
+            <div class="discord-handle-row">
+              <div class="discord-id-badge glass-inset" id="discord-id-display" title="Click to copy username">
+                <span class="tag-prefix">@</span>
+                <span class="tag-name">skylerproject_</span>
+              </div>
+
+              <div class="discord-action-buttons">
+                <button class="btn btn-discord-copy btn-glow" id="discord-copy-btn" aria-label="Copy Discord Username">
+                  <span class="copy-icon">📋</span>
+                  <span class="copy-btn-label" data-t="contact.copy_btn">COPY USERNAME</span>
+                </button>
+                <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer" class="btn btn-discord-open glass-btn" data-t="contact.open_discord">
+                  OPEN DISCORD APP ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- Toast notification inside Discord widget -->
+            <div class="copy-feedback-banner glass-pill" id="copy-feedback-banner">
+              <span class="feedback-icon">✔</span> USERNAME COPIED: <strong>skylerproject_</strong> (Add me on Discord!)
+            </div>
+
+            <!-- Secondary alternative links -->
+            <div class="matrix-secondary-links">
+              <span class="secondary-label" data-t="contact.alt_label">Or connect directly across:</span>
+              <div class="secondary-buttons">
+                <a href="https://wa.me/62817769084" target="_blank" rel="noopener noreferrer" class="sec-link-chip glass-pill">
+                  <span>WhatsApp</span> ↗
+                </a>
+                <a href="mailto:diryaflop@gmail.com" class="sec-link-chip glass-pill">
+                  <span>Email</span> ↗
+                </a>
+                <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="sec-link-chip glass-pill">
+                  <span>TikTok</span> ↗
+                </a>
+                <a href="https://www.instagram.com/skylerproject_" target="_blank" rel="noopener noreferrer" class="sec-link-chip glass-pill">
+                  <span>Instagram</span> ↗
+                </a>
+                <a href="https://github.com/skilerrr" target="_blank" rel="noopener noreferrer" class="sec-link-chip glass-pill">
+                  <span>GitHub</span> ↗
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
     </main>
 
-    <!-- Expanded Diverse Footer Area -->
-    <footer class="main-footer-expanded">
+    <!-- Expanded Diagnostic Footer -->
+    <footer class="main-footer-expanded glass-panel">
       <div class="footer-grid">
         <!-- System Diagnostic Panel -->
-        <div class="footer-panel">
+        <div class="footer-panel glass-inset">
           <span class="panel-header">DIAGNOSTIC DATA //</span>
           <table class="diagnostic-table">
             <tr>
@@ -505,53 +719,50 @@
               <td class="status-active"><span class="online-indicator"></span> ACTIVE</td>
             </tr>
             <tr>
-              <td>UPTIME:</td>
-              <td>99.98%</td>
+              <td>LOCATION:</td>
+              <td>MEDAN, ID</td>
             </tr>
             <tr>
               <td>ENGINE:</td>
-              <td>HTML/CSS/VANILLA JS</td>
+              <td>HTML / LIQUID GLASS / VANILLA JS</td>
             </tr>
           </table>
         </div>
 
         <!-- System Node Panel -->
-        <div class="footer-panel">
-          <span class="panel-header">CORE RESOURCE //</span>
+        <div class="footer-panel glass-inset">
+          <span class="panel-header">CORE NODES //</span>
           <table class="diagnostic-table">
             <tr>
               <td>DISCORD:</td>
               <td><span class="footer-highlight">@skylerproject_</span></td>
             </tr>
             <tr>
-              <td>SOURCE:</td>
-              <td><a href="https://github.com/skilerrr" target="_blank" class="footer-link">github.com/skilerrr</a></td>
+              <td>TIKTOK:</td>
+              <td><a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="footer-link">@skylerproject_</a></td>
             </tr>
             <tr>
-              <td>EMAIL:</td>
-              <td><a href="mailto:diryaflop@gmail.com" class="footer-link">diryaflop@gmail.com</a></td>
+              <td>GITHUB:</td>
+              <td><a href="https://github.com/skilerrr" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/skilerrr</a></td>
             </tr>
           </table>
         </div>
 
-        <!-- Clock & Track Panel -->
-        <div class="footer-panel">
-          <span class="panel-header">TIME & AUDIO STREAMS //</span>
+        <!-- Clock & Node Panel -->
+        <div class="footer-panel glass-inset">
+          <span class="panel-header">SYSTEM CLOCK //</span>
           <div class="status-clock-box">
             <span class="clock-label">SYS_TIME:</span>
             <span id="system-clock" class="clock-display">00:00:00 AM</span>
           </div>
-          <div class="music-playing-indicator">
-            <span class="track-label">TRACK:</span>
-            <span id="footer-track-name" class="track-name">BEST FRIEND (REX ORANGE COUNTY)</span>
-          </div>
+          <div class="location-badge">MEDAN (WIB / UTC+7)</div>
         </div>
       </div>
 
       <!-- Footer Bottom Bar -->
       <div class="footer-bottom-bar">
         <p data-t="footer.copyright">© 2026 skylerproject_. ALL RIGHTS RESERVED.</p>
-        <div class="footer-logo-gfx">▲ MONOLITH ARCHIVE // RUNNING OK</div>
+        <div class="footer-logo-gfx">▲ MONOLITH GLASS ARCHIVE // ZERO BLOAT</div>
       </div>
     </footer>
 

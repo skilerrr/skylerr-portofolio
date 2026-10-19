@@ -5,9 +5,9 @@
 
 /* Design Tokens & Theme Variables */
 :root {
-  --font-display: 'Anybody', sans-serif;
-  --font-mono: 'Space Mono', monospace;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
   --grid-size: 32px;
   --transition-smooth: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 0.12s ease-out;
@@ -980,6 +980,18 @@ body::before {
   flex-direction: column;
 }
 
+.service-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border-subtle);
+  color: var(--text-secondary);
+}
+
 .service-card-header {
   display: flex;
   justify-content: space-between;
@@ -1003,8 +1015,9 @@ body::before {
 
 .service-title {
   font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   margin-bottom: 10px;
 }
 
@@ -1023,8 +1036,9 @@ body::before {
 }
 
 .service-tags span {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
   color: var(--text-secondary);
 }
 

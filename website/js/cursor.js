@@ -88,8 +88,13 @@ class RetroCursorController {
       transition: "color 0.2s"
     });
 
-    // Hide default cursor
-    document.documentElement.style.cursor = "none";
+    // Hide default cursor on desktop with mouse pointer
+    const isTouch = window.matchMedia("(pointer: coarse)").matches || ('ontouchstart' in window);
+    if (!isTouch) {
+      document.documentElement.style.cursor = "none";
+    } else {
+      this.cursorEl.style.display = "none";
+    }
     
     // 3. Bind Event Listeners
     window.addEventListener("resize", () => this.resizeCanvas());

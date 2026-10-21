@@ -96,8 +96,8 @@
 
       <!-- Header Controls: Lang, Theme, and Mobile Menu Toggle -->
       <div class="header-controls">
-        <!-- Language Switcher -->
-        <div class="lang-selector glass-pill">
+        <!-- Desktop Language Switcher -->
+        <div class="lang-selector desktop-only glass-pill">
           <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
           <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
         </div>
@@ -109,27 +109,73 @@
 
         <!-- Mobile Hamburger Button -->
         <button class="mobile-menu-toggle glass-pill" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
         </button>
       </div>
     </header>
 
+    <!-- Mobile Nav Backdrop Overlay -->
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+
     <!-- Mobile Drawer Nav (Glass Floating Menu) -->
     <nav class="mobile-nav-drawer glass-panel" id="mobile-nav-drawer" aria-label="Mobile Navigation">
       <div class="drawer-header">
-        <span class="drawer-title">// NAVIGATION</span>
-        <button class="drawer-close" id="drawer-close-btn" aria-label="Close Navigation">✕</button>
+        <span class="drawer-title" data-t="drawer.title">// NAVIGATION</span>
+        <button class="drawer-close glass-pill" id="drawer-close-btn" aria-label="Close Navigation">✕</button>
       </div>
       <div class="mobile-nav-links">
-        <a href="#hero" class="mobile-nav-link" data-t="nav.home">HOME</a>
-        <a href="#about" class="mobile-nav-link" data-t="nav.about">ABOUT</a>
-        <a href="#projects" class="mobile-nav-link" data-t="nav.projects">PROJECTS</a>
-        <a href="#services" class="mobile-nav-link nav-highlight" data-t="nav.services">SERVICES</a>
-        <a href="#popular-videos" class="mobile-nav-link" data-t="nav.popular">TOP CLIPS</a>
-        <a href="#media-channels" class="mobile-nav-link" data-t="nav.channels">CHANNELS</a>
-        <a href="#contact" class="mobile-nav-link" data-t="hero.cta_contact">CONTACT</a>
+        <a href="#hero" class="mobile-nav-link">
+          <span data-t="nav.home">HOME</span>
+          <span class="nav-arrow">›</span>
+        </a>
+        <a href="#about" class="mobile-nav-link">
+          <span data-t="nav.about">ABOUT</span>
+          <span class="nav-arrow">›</span>
+        </a>
+        <a href="#projects" class="mobile-nav-link">
+          <span data-t="nav.projects">PROJECTS</span>
+          <span class="nav-arrow">›</span>
+        </a>
+        <a href="#services" class="mobile-nav-link nav-highlight">
+          <span data-t="nav.services">SERVICES</span>
+          <span class="nav-arrow">›</span>
+        </a>
+        <a href="#popular-videos" class="mobile-nav-link">
+          <span data-t="nav.popular">TOP CLIPS</span>
+          <span class="nav-arrow">›</span>
+        </a>
+        <a href="#media-channels" class="mobile-nav-link">
+          <span data-t="nav.channels">CHANNELS</span>
+          <span class="nav-arrow">›</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link">
+          <span data-t="hero.cta_contact">CONTACT</span>
+          <span class="nav-arrow">›</span>
+        </a>
+      </div>
+
+      <!-- Mobile Drawer Utilities (Language Selector + Quick Contact) -->
+      <div class="drawer-utility-box glass-inset">
+        <div class="drawer-lang-row">
+          <span class="drawer-lang-label" data-t="drawer.lang_label">LANGUAGE:</span>
+          <div class="lang-selector drawer-lang-selector glass-pill">
+            <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+            <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+          </div>
+        </div>
+        <div class="drawer-quick-links">
+          <a href="#contact" class="drawer-chip-link glass-pill">
+            <span>💬 Discord</span>
+          </a>
+          <a href="https://wa.me/62817769084" target="_blank" rel="noopener noreferrer" class="drawer-chip-link glass-pill">
+            <span>📱 WhatsApp</span>
+          </a>
+          <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="drawer-chip-link glass-pill">
+            <span>🎵 TikTok</span>
+          </a>
+        </div>
       </div>
     </nav>
 

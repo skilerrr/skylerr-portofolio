@@ -32,38 +32,58 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================================================
   const menuToggle = document.getElementById("mobile-menu-toggle");
   const navDrawer = document.getElementById("mobile-nav-drawer");
+  const navBackdrop = document.getElementById("mobile-nav-backdrop");
   const drawerCloseBtn = document.getElementById("drawer-close-btn");
   const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 
   const openDrawer = () => {
-    if (navDrawer && menuToggle) {
-      navDrawer.classList.add("active");
-      menuToggle.setAttribute("aria-expanded", "true");
-    }
+    if (!navDrawer || !menuToggle) return;
+    navDrawer.classList.add("active");
+    menuToggle.classList.add("active");
+    menuToggle.setAttribute("aria-expanded", "true");
+    if (navBackdrop) navBackdrop.classList.add("active");
+    document.body.classList.add("menu-open");
   };
 
   const closeDrawer = () => {
-    if (navDrawer && menuToggle) {
-      navDrawer.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-    }
+    if (!navDrawer || !menuToggle) return;
+    navDrawer.classList.remove("active");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    if (navBackdrop) navBackdrop.classList.remove("active");
+    document.body.classList.remove("menu-open");
   };
 
   if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       const isOpen = navDrawer && navDrawer.classList.contains("active");
       if (isOpen) closeDrawer(); else openDrawer();
     });
   }
 
   if (drawerCloseBtn) {
-    drawerCloseBtn.addEventListener("click", closeDrawer);
+    drawerCloseBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeDrawer();
+    });
+  }
+
+  if (navBackdrop) {
+    navBackdrop.addEventListener("click", closeDrawer);
   }
 
   mobileNavLinks.forEach(link => {
     link.addEventListener("click", () => {
       closeDrawer();
     });
+  });
+
+  // Close drawer on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navDrawer && navDrawer.classList.contains("active")) {
+      closeDrawer();
+    }
   });
 
   // Close drawer when clicking outside

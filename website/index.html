@@ -121,60 +121,49 @@
 
     <!-- Mobile Drawer Nav (Glass Floating Menu) -->
     <nav class="mobile-nav-drawer glass-panel" id="mobile-nav-drawer" aria-label="Mobile Navigation">
-      <div class="drawer-header">
-        <span class="drawer-title" data-t="drawer.title">// NAVIGATION</span>
-        <button class="drawer-close glass-pill" id="drawer-close-btn" aria-label="Close Navigation">✕</button>
-      </div>
       <div class="mobile-nav-links">
         <a href="#hero" class="mobile-nav-link">
+          <span class="nav-num">01</span>
           <span data-t="nav.home">HOME</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#about" class="mobile-nav-link">
+          <span class="nav-num">02</span>
           <span data-t="nav.about">ABOUT</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#projects" class="mobile-nav-link">
+          <span class="nav-num">03</span>
           <span data-t="nav.projects">PROJECTS</span>
           <span class="nav-arrow">›</span>
         </a>
-        <a href="#services" class="mobile-nav-link nav-highlight">
+        <a href="#services" class="mobile-nav-link">
+          <span class="nav-num">04</span>
           <span data-t="nav.services">SERVICES</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#popular-videos" class="mobile-nav-link">
+          <span class="nav-num">05</span>
           <span data-t="nav.popular">TOP CLIPS</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#media-channels" class="mobile-nav-link">
+          <span class="nav-num">06</span>
           <span data-t="nav.channels">CHANNELS</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#contact" class="mobile-nav-link">
+          <span class="nav-num">07</span>
           <span data-t="hero.cta_contact">CONTACT</span>
           <span class="nav-arrow">›</span>
         </a>
       </div>
 
-      <!-- Mobile Drawer Utilities (Language Selector + Quick Contact) -->
-      <div class="drawer-utility-box glass-inset">
-        <div class="drawer-lang-row">
-          <span class="drawer-lang-label" data-t="drawer.lang_label">LANGUAGE:</span>
-          <div class="lang-selector drawer-lang-selector glass-pill">
-            <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
-            <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
-          </div>
-        </div>
-        <div class="drawer-quick-links">
-          <a href="#contact" class="drawer-chip-link glass-pill">
-            <span>💬 Discord</span>
-          </a>
-          <a href="https://wa.me/62817769084" target="_blank" rel="noopener noreferrer" class="drawer-chip-link glass-pill">
-            <span>📱 WhatsApp</span>
-          </a>
-          <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="drawer-chip-link glass-pill">
-            <span>🎵 TikTok</span>
-          </a>
+      <div class="drawer-lang-row">
+        <span class="drawer-lang-label" data-t="drawer.lang_label">LANGUAGE:</span>
+        <div class="lang-selector drawer-lang-selector glass-pill">
+          <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+          <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
         </div>
       </div>
     </nav>
@@ -187,11 +176,6 @@
         <div class="hero-grid">
 
           <div class="hero-left">
-            <div class="system-status glass-pill">
-              <span class="pulse-indicator"></span>
-              <span class="status-text" data-t="hero.status">SYSTEM INITIALIZED // ALL CHANNELS ACTIVE</span>
-            </div>
-
             <h1 class="hero-title glitch-text" data-text="skylerproject_" data-t="hero.title">skylerproject_</h1>
 
             <!-- Typewriter Container -->
@@ -209,8 +193,7 @@
               <div class="hero-buttons">
                 <a href="#services" class="btn btn-primary btn-glow" data-t="hero.cta_services">SERVICES & LAPTOPS</a>
                 <a href="#projects" class="btn btn-secondary glass-btn" data-t="hero.cta_projects">EXPLORE CODE</a>
-                <a href="#contact" class="btn btn-secondary glass-btn" data-t="hero.cta_contact">LET'S TALK</a>
-              </div>
+                </div>
 
               <!-- Quick Stat Badges -->
               <div class="hero-stats-row">
@@ -259,10 +242,7 @@
                 <div class="profile-circle glass-card">
                   <img src="assets/profile.jpg" alt="skylerproject_ profile" class="profile-img" width="320" height="320" loading="eager">
                 </div>
-                <div class="profile-handle-tag glass-pill">
-                  <span class="handle-prefix">@</span><span class="handle-val">skylerproject_</span>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -378,12 +358,6 @@
           <span class="turnaround-tag">MEDAN AREA COD & DIRECT DM</span>
         </div>
 
-        <div class="collab-intro-box glass-inset">
-          <p class="collab-intro-text" data-t="services.intro">
-            Need custom web development, dynamic short-form edits, or looking to buy a clean second-hand business laptop in Medan? Reach out directly.
-          </p>
-        </div>
-
         <!-- 3 Core Offerings Grid -->
         <div class="collab-services-grid">
           <!-- Card 1: Web Development -->
@@ -404,6 +378,11 @@
                 <span class="glass-pill">Supabase</span>
               </div>
             </div>
+            <div class="service-card-footer">
+              <a href="#contact" class="btn btn-secondary glass-btn btn-card-action">
+                <span data-t="services.card1_cta">KONSULTASI WEB DEV</span> ↗
+              </a>
+            </div>
           </div>
 
           <!-- Card 2: Video Editing & Production -->
@@ -423,9 +402,14 @@
                 <span class="glass-pill">YouTube Gaming</span>
               </div>
             </div>
+            <div class="service-card-footer">
+              <a href="#contact" class="btn btn-secondary glass-btn btn-card-action">
+                <span data-t="services.card2_cta">DISKUSI EDITING</span> ↗
+              </a>
+            </div>
           </div>
 
-          <!-- Card 3: Business Laptop Sourcing & Check-up (Featured Medan) -->
+          <!-- Card 3: Business Laptop Sourcing & Check-up (Featured Medan Desk) -->
           <div class="service-retro-card glass-card highlighted-enthusiast-card">
             <div class="service-card-header">
               <span class="service-badge badge-medan" data-t="services.card3_badge">MEDAN AREA // ON-SITE</span>
@@ -444,65 +428,24 @@
                 <span class="glass-pill">COD Medan</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- DEEP-DIVE MEDAN LAPTOP SERVICE DESK BOX -->
-        <div class="medan-desk-box glass-card">
-          <div class="desk-header">
-            <div class="desk-badge glass-pill">
-              <span class="desk-dot"></span>
-              <span data-t="services.medan_loc">MEDAN, NORTH SUMATRA & SURROUNDINGS</span>
-            </div>
-            <h3 class="desk-title" data-t="services.medan_title">Second-hand Business Laptops & Pre-Buy Inspection Desk</h3>
-            <p class="desk-desc" data-t="services.medan_desc">
-              Buying used hardware is a minefield. I track down vetted corporate units (ThinkPad T/X, Dell Latitude 5000/7000, HP EliteBook) and run comprehensive on-site diagnostic checks before you commit cash.
-            </p>
-          </div>
-
-          <div class="desk-features-grid">
-            <div class="desk-feat-item glass-inset">
-              <div class="feat-icon">🔬</div>
-              <h4 class="feat-title" data-t="services.feature1_title">Hardware Stress Testing</h4>
-              <p class="feat-desc" data-t="services.feature1_desc">AIDA64 / Cinebench thermal loop, FurMark / OCCT stability checks, SSD health (CrystalDiskInfo), and battery cycle-count analysis.</p>
-            </div>
-
-            <div class="desk-feat-item glass-inset">
-              <div class="feat-icon">🎯</div>
-              <h4 class="feat-title" data-t="services.feature2_title">Business Unit Sourcing</h4>
-              <p class="feat-desc" data-t="services.feature2_desc">I locate pristine off-lease enterprise laptops tailored to your exact budget — sturdy magnesium chassis, upgradable RAM, and matte screens.</p>
-            </div>
-
-            <div class="desk-feat-item glass-inset">
-              <div class="feat-icon">⚡</div>
-              <h4 class="feat-title" data-t="services.feature3_title">Clean OS & Performance Tuning</h4>
-              <p class="feat-desc" data-t="services.feature3_desc">Fresh Windows debloat, telemetry stripping, undervolt / P-state tuning, thermal paste refresh (Honeywell PTM7950 / Arctic MX-6).</p>
-            </div>
-
-            <div class="desk-feat-item glass-inset">
-              <div class="feat-icon">📍</div>
-              <h4 class="feat-title" data-t="services.feature4_title">Medan Meetup & CoD</h4>
-              <p class="feat-desc" data-t="services.feature4_desc">Direct meetups around Medan area to inspect the laptop hardware and run diagnostic checks together.</p>
-            </div>
-          </div>
-
-          <!-- Customer Wall / Satisfied Customers (Reserved Showcase) -->
-          <div class="customer-wall-box glass-panel">
-            <div class="customer-wall-header">
-              <span class="wall-badge" data-t="services.customer_wall_label">PORTFOLIO & SATISFIED CUSTOMERS</span>
-              <h4 class="wall-title" data-t="services.customer_wall_heading">Customer Wall (Coming Soon)</h4>
-            </div>
-            <p class="wall-note" data-t="services.customer_wall_note">
-              Inspection logs and buyer feedback are being compiled. Space reserved for upcoming satisfied customer showcases.
-            </p>
-            <div class="wall-cta-row">
-              <a href="https://wa.me/62817769084?text=Halo%20Skyler,%20gw%20mau%20konsultasi%20/%20cari%20laptop%20sekenan%20bisnis%20di%20Medan" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow-subtle" data-t="services.cta_wa">
+            <div class="service-card-footer">
+              <a href="https://wa.me/62817769084?text=Halo%20Skyler,%20gw%20mau%20konsultasi%20/%20cari%20laptop%20sekenan%20bisnis%20di%20Medan" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow-subtle btn-card-action" data-t="services.cta_wa">
                 CHAT VIA WHATSAPP ↗
               </a>
             </div>
           </div>
         </div>
 
+        <!-- Customer Wall / Satisfied Customers (Reserved Showcase) -->
+        <div class="customer-wall-box glass-panel">
+          <div class="customer-wall-header">
+            <span class="wall-badge" data-t="services.customer_wall_label">PORTFOLIO & SATISFIED CUSTOMERS</span>
+            <h4 class="wall-title" data-t="services.customer_wall_heading">Customer Wall (Coming Soon)</h4>
+          </div>
+          <p class="wall-note" data-t="services.customer_wall_note">
+            Inspection logs and buyer feedback are being compiled. Space reserved for upcoming satisfied customer showcases.
+          </p>
+        </div>
       </section>
 
       <!-- POPULAR VIDEOS & VIRAL CLIPS SECTION (TIKTOK & YOUTUBE) -->
@@ -622,12 +565,30 @@
         </div>
 
         <div class="media-channels-grid">
-          <!-- YouTube Channel Card -->
+          <!-- Notion Tech Guides Card (Featured Knowledge Base) -->
+          <div class="media-card glass-card">
+            <div class="media-thumbnail-container">
+              <img src="assets/media-notion.jpg" alt="Notion Tech Guides" class="media-thumbnail" width="480" height="270" loading="lazy">
+            </div>
+            <div class="media-card-body">
+              <span class="service-badge">KNOWLEDGE BASE</span>
+              <h3 class="media-card-title" data-t="media.notion_title">Notion: Tech Guides</h3>
+              <p class="media-card-desc" data-t="media.notion_desc">A detailed digital space hosting setup recommendations, laptop purchase guidelines, and code snippets.</p>
+            </div>
+            <div class="media-card-footer">
+              <a href="https://bit.ly/techguidesbyskyler" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn" data-t="media.open">
+                OPEN RESOURCE ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- YouTube CDID & Gaming Card -->
           <div class="media-card glass-card">
             <div class="media-thumbnail-container">
               <img src="assets/media-youtube.jpg" alt="YouTube JustSkyler Project Channel" class="media-thumbnail" width="480" height="270" loading="lazy">
             </div>
             <div class="media-card-body">
+              <span class="service-badge">ROBLOX & GAMING</span>
               <h3 class="media-card-title" data-t="media.yt_title">YouTube: CDID & Gaming</h3>
               <p class="media-card-desc" data-t="media.yt_desc">Mainly featuring 'Car Driving Indonesia' (CDID) Roblox cruises, car reviews, custom builds, and multiplayer races.</p>
             </div>
@@ -638,33 +599,18 @@
             </div>
           </div>
 
-          <!-- TikTok Channel Card -->
+          <!-- TikTok F1 Hub Card -->
           <div class="media-card glass-card">
             <div class="media-thumbnail-container">
               <img src="assets/tiktok-profile.jpg" alt="TikTok @skylerproject_ profile" class="media-thumbnail" width="480" height="270" loading="lazy">
             </div>
             <div class="media-card-body">
+              <span class="service-badge">MOTORSPORT F1</span>
               <h3 class="media-card-title" data-t="media.tiktok_title">TikTok: Formula 1 Hub</h3>
               <p class="media-card-desc" data-t="media.tiktok_desc">Motorsport ragebait, race highlights, Singapore GP chaos, and F1 driver memes under @skylerproject_.</p>
             </div>
             <div class="media-card-footer">
               <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn" data-t="media.open">
-                OPEN CHANNEL ↗
-              </a>
-            </div>
-          </div>
-
-          <!-- Notion Blog Card -->
-          <div class="media-card glass-card">
-            <div class="media-thumbnail-container">
-              <img src="assets/media-notion.jpg" alt="Notion Tech Guides" class="media-thumbnail" width="480" height="270" loading="lazy">
-            </div>
-            <div class="media-card-body">
-              <h3 class="media-card-title" data-t="media.notion_title">Notion: Tech Guides</h3>
-              <p class="media-card-desc" data-t="media.notion_desc">A detailed digital space hosting setup recommendations, laptop purchase guidelines, and code snippets.</p>
-            </div>
-            <div class="media-card-footer">
-              <a href="https://bit.ly/techguidesbyskyler" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn" data-t="media.open">
                 OPEN CHANNEL ↗
               </a>
             </div>

@@ -283,12 +283,12 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "HP EliteBook 645 G11 (Ryzen 5 7535U) // Personal Daily Driver",
       items: [
         {
-          src: "assets/laptops/elitebook-645-chassis.jpg",
-          desc: "Lid all-metal silver dengan logo slash HP modern di atas meja setup, dipadukan mechanical keyboard & mic."
-        },
-        {
           src: "assets/laptops/elitebook-645-f1-lockscreen.jpg",
           desc: "Lockscreen Charles Leclerc #16 Scuderia Ferrari di kegelapan kamar + keyboard backlit illuminated."
+        },
+        {
+          src: "assets/laptops/elitebook-645-chassis.jpg",
+          desc: "Lid all-metal silver dengan logo slash HP modern di atas meja setup, dipadukan mechanical keyboard & mic."
         },
         {
           src: "assets/laptops/elitebook-645-desk-setup.jpg",

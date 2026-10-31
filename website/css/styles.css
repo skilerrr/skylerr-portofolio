@@ -1306,41 +1306,8 @@ body.menu-open {
   line-height: 1.35;
 }
 
-.rig-highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.rig-highlight-card {
-  border: 1px solid var(--border-color);
-  background: var(--surface-dim);
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.highlight-num {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 800;
-  color: var(--accent-color);
-  letter-spacing: 0.05em;
-}
-
-.highlight-desc {
-  font-size: 11.5px;
-  color: var(--text-secondary);
-  line-height: 1.45;
-  margin: 0;
-}
-
 @media (max-width: 992px) {
   .rig-card-container {
-    grid-template-columns: 1fr;
-  }
-  .rig-highlights-grid {
     grid-template-columns: 1fr;
   }
   .rig-spec-matrix {

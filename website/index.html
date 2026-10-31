@@ -437,100 +437,59 @@
         </div>
 
         <!-- Customer Wall / Client History & Inspection Archive -->
-        <div class="customer-wall-box">
+        <div class="customer-wall-container">
           <div class="customer-wall-header">
             <div class="wall-header-meta">
-              <span class="wall-badge" data-t="services.customer_wall_label">LOG TERVERIFIKASI // UNIT SELESAI COD</span>
-              <span class="wall-status-pill">COD MEDAN // VERIFIED</span>
+              <span class="wall-badge" data-t="services.client_wall_badge">// ARSIP JASTIP & INSPEKSI</span>
+              <span class="wall-status-pill" data-t="services.card_status_verified">COD MEDAN // TERVERIFIKASI</span>
             </div>
-            <h4 class="wall-title" data-t="services.customer_wall_heading">HP EliteBook 640 G11 // Arsip Inspeksi & Serah Terima Klien</h4>
-            <p class="wall-note" data-t="services.customer_wall_note">
-              Dokumentasi alur jastip/hunting unit: kelengkapan dus & nota resmi, audit diagnosa HWiNFO64 & health SSD, uji kestabilan beban, hingga serah terima COD fisik langsung di Medan.
+            <h4 class="wall-title" data-t="services.client_wall_title">Riwayat Unit & Serah Terima Klien</h4>
+            <p class="wall-note" data-t="services.client_wall_subtitle">
+              Katalog unit sekenan bisnis yang berhasil di-hunting, lolos uji QC, dan diserahterimakan langsung ke pembeli.
             </p>
           </div>
 
-          <!-- Featured Primary Item: Laptop + Box + Nota -->
-          <div class="client-log-hero">
-            <div class="client-log-hero-media">
-              <img src="assets/laptops/elitebook-box-unit.jpg" alt="HP EliteBook 640 G11 with Box and Nota Penjualan" loading="lazy" class="client-log-img">
-              <span class="log-media-tag" data-t="services.log_lead_tag">SHOWCASE UTAMA // UNIT & DUS RESMI</span>
-            </div>
-            <div class="client-log-hero-info">
-              <div class="client-log-meta-header">
-                <span class="client-log-model">HP EliteBook 640 14 inch G11 Notebook PC</span>
-                <span class="client-log-batch">BATCH #2026-MEDAN-01</span>
+          <!-- Modular Client Cards Grid -->
+          <div class="client-cards-grid">
+            <!-- Card 1: HP EliteBook 640 G11 -->
+            <div class="client-history-card" data-gallery-id="elitebook-640-g11" role="button" tabindex="0" aria-label="Buka galeri HP EliteBook 640 G11">
+              <div class="client-card-cover-wrapper">
+                <img src="assets/laptops/elitebook-box-unit.jpg" alt="HP EliteBook 640 G11 Box & Unit" loading="lazy" class="client-card-cover">
+                <span class="client-card-tag">6 FOTO INSPEKSI ↗</span>
+                <span class="client-card-status">COD MEDAN</span>
               </div>
-              <ul class="client-log-spec-list">
-                <li><strong>CPU:</strong> Intel Core Ultra 7 165U (Meteor Lake-U, 12C / 14T, up to 4.90 GHz)</li>
-                <li><strong>RAM:</strong> 16 GB DDR5-5600 MHz SDRAM (Micron Technology, Single-Channel)</li>
-                <li><strong>Storage:</strong> 512 GB SK hynix BC901 PCIe 4.0 NVMe SSD (Health 100% Verified)</li>
-                <li><strong>Display & Audio:</strong> 14" Anti-glare FHD IPS, Poly Studio tuned stereo speakers</li>
-                <li><strong>Security & Chassis:</strong> Intel vPro Enterprise, Windows Hello fingerprint, precision aluminum</li>
-                <li><strong>Kelengkapan:</strong> Unit mulus 100%, dus packaging HP original, charger bawaan, nota fisik</li>
-              </ul>
-              <div class="client-log-badges">
-                <span class="editorial-pill">HWiNFO64 PASSED</span>
-                <span class="editorial-pill">BATTERY CYCLES CLEAN</span>
-                <span class="editorial-pill">ZERO DEAD PIXEL</span>
-                <span class="editorial-pill">PHYSICAL INVOICE INCLUDED</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Inspection Proof & Handover Grid -->
-          <div class="client-log-grid">
-            <div class="client-log-card">
-              <div class="client-log-thumb-wrapper">
-                <img src="assets/laptops/elitebook-hwinfo-diag.jpg" alt="HWiNFO64 Diagnostic Summary" loading="lazy" class="client-log-thumb">
-                <span class="log-thumb-badge">AUDIT // HWINFO64</span>
-              </div>
-              <div class="client-log-card-body">
-                <h5 class="client-log-card-title" data-t="services.log_hwinfo_title">Audit Diagnostik HWiNFO64 & SSD NVMe</h5>
-                <p class="client-log-card-desc" data-t="services.log_hwinfo_desc">Verifikasi hardware asli: SKU motherboard, frekuensi DDR5-5600, sensor suhu, dan status kesehatan NVMe SK hynix 512GB.</p>
+              <div class="client-card-body">
+                <div class="client-card-header">
+                  <h5 class="client-card-title">HP EliteBook 640 G11</h5>
+                  <span class="client-card-batch">BATCH #2026-MEDAN-01</span>
+                </div>
+                <p class="client-card-summary" data-t="services.card_summary_elitebook">
+                  Hunting unit mulus fullset kardus packaging original + charger resmi untuk klien di Medan. Lolos audit HWiNFO64, health SSD 100%, dan tes kestabilan.
+                </p>
+                <div class="client-card-specs">
+                  <span class="editorial-pill">Core Ultra 7 165U</span>
+                  <span class="editorial-pill">16 GB DDR5</span>
+                  <span class="editorial-pill">512 GB NVMe</span>
+                </div>
+                <div class="client-card-footer">
+                  <span class="btn-view-gallery">
+                    <span data-t="services.card_view_gallery">BUKA GALERI (6 FOTO)</span> <span>↗</span>
+                  </span>
+                </div>
               </div>
             </div>
 
-            <div class="client-log-card">
-              <div class="client-log-thumb-wrapper">
-                <img src="assets/laptops/elitebook-client-handover.jpg" alt="Serah Terima Unit ke Klien" loading="lazy" class="client-log-thumb">
-                <span class="log-thumb-badge">DELIVERY // COD MEDAN</span>
-              </div>
-              <div class="client-log-card-body">
-                <h5 class="client-log-card-title" data-t="services.log_handover_title">Serah Terima Unit ke Klien (COD Medan)</h5>
-                <p class="client-log-card-desc" data-t="services.log_handover_desc">Handover langsung di Medan. Unit dites langsung bareng pembeli, cek fisik menyeluruh sebelum penyelesaian transaksi.</p>
-              </div>
-            </div>
-
-            <div class="client-log-card">
-              <div class="client-log-thumb-wrapper">
-                <img src="assets/laptops/elitebook-dual-desk.jpg" alt="Dual Unit Testing Desk" loading="lazy" class="client-log-thumb">
-                <span class="log-thumb-badge">QC // BURN-IN DESK</span>
-              </div>
-              <div class="client-log-card-body">
-                <h5 class="client-log-card-title" data-t="services.log_desk_title">Uji Beban & Cek Kualitas Panel Layar</h5>
-                <p class="client-log-card-desc" data-t="services.log_desk_desc">Pengetesan komparasi display, kecerahan layar, viewing angle, backlight bleed, dan performa multitasking simultan.</p>
-              </div>
-            </div>
-
-            <div class="client-log-card">
-              <div class="client-log-thumb-wrapper">
-                <img src="assets/laptops/elitebook-taskmanager.jpg" alt="Task Manager Performance Benchmark" loading="lazy" class="client-log-thumb">
-                <span class="log-thumb-badge">BENCH // CORE ULTRA 7</span>
-              </div>
-              <div class="client-log-card-body">
-                <h5 class="client-log-card-title" data-t="services.log_cpu_title">Benchmark Kestabilan Core Ultra 7 165U</h5>
-                <p class="client-log-card-desc" data-t="services.log_cpu_desc">Pemantauan 12 Core / 14 Logical Processors, Intel AI Boost NPU, dan utilitas RAM DDR5 pada Windows 11 Pro 24H2.</p>
-              </div>
-            </div>
-
-            <div class="client-log-card">
-              <div class="client-log-thumb-wrapper">
-                <img src="assets/laptops/elitebook-chassis-vpro.jpg" alt="Chassis Palmrest & Intel vPro Detail" loading="lazy" class="client-log-thumb">
-                <span class="log-thumb-badge">PHYSICAL // BUILD QUALITY</span>
-              </div>
-              <div class="client-log-card-body">
-                <h5 class="client-log-card-title" data-t="services.log_chassis_title">Fisik Palmrest, Poly Studio & Intel vPro</h5>
-                <p class="client-log-card-desc" data-t="services.log_chassis_desc">Pemeriksaan sensor fingerprint, touchpad responsif, engsel layar kokoh, dan audio Poly Studio tanpa kresek.</p>
+            <!-- Card 2: Upcoming Slot Placeholder -->
+            <div class="client-history-card client-card-placeholder">
+              <div class="placeholder-icon">+</div>
+              <h5 class="placeholder-title" data-t="services.card_next_slot">+ SLOT LOG BERIKUTNYA</h5>
+              <p class="placeholder-desc" data-t="services.card_next_desc">
+                Slot disiapkan untuk dokumentasi hunting dan COD laptop klien berikutnya.
+              </p>
+              <div class="placeholder-chips">
+                <span class="editorial-pill">ThinkPad T/X</span>
+                <span class="editorial-pill">Dell Latitude</span>
+                <span class="editorial-pill">HP EliteBook</span>
               </div>
             </div>
           </div>
@@ -832,6 +791,36 @@
       </div>
     </footer>
 
+  </div>
+
+  <!-- Image Lightbox Modal for Client Inspection Gallery -->
+  <div id="image-lightbox-modal" class="editorial-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="editorial-modal-backdrop" id="modal-backdrop"></div>
+    <div class="editorial-modal-window">
+      <div class="editorial-modal-header">
+        <div class="modal-header-text">
+          <span class="modal-badge">// ARSIP INSPEKSI LAPTOP</span>
+          <h4 class="modal-title" id="lightbox-title">HP EliteBook 640 G11</h4>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Tutup galeri">✕</button>
+      </div>
+
+      <div class="editorial-modal-viewer">
+        <button type="button" class="lightbox-arrow lightbox-arrow-prev" id="lightbox-prev" aria-label="Foto sebelumnya">‹</button>
+        <div class="lightbox-stage">
+          <img id="lightbox-img" src="" alt="Bukti inspeksi laptop" class="lightbox-image">
+        </div>
+        <button type="button" class="lightbox-arrow lightbox-arrow-next" id="lightbox-next" aria-label="Foto selanjutnya">›</button>
+      </div>
+
+      <div class="editorial-modal-footer">
+        <div class="lightbox-meta">
+          <span class="lightbox-counter" id="lightbox-counter">1 / 6</span>
+          <p class="lightbox-desc" id="lightbox-desc"></p>
+        </div>
+        <div class="lightbox-dots" id="lightbox-dots"></div>
+      </div>
+    </div>
   </div>
 
   <!-- Translation and Logic Scripts -->

@@ -278,6 +278,27 @@ document.addEventListener("DOMContentLoaded", () => {
           desc: "Serah terima langsung ke klien (COD Medan): Unit dites bareng di tempat sebelum transaksi selesai."
         }
       ]
+    },
+    "elitebook-645-g11": {
+      title: "HP EliteBook 645 G11 (Ryzen 5 7535U) // Personal Daily Driver",
+      items: [
+        {
+          src: "assets/laptops/elitebook-645-chassis.jpg",
+          desc: "Lid all-metal silver dengan logo slash HP modern di atas meja setup, dipadukan mechanical keyboard & mic."
+        },
+        {
+          src: "assets/laptops/elitebook-645-f1-lockscreen.jpg",
+          desc: "Lockscreen Charles Leclerc #16 Scuderia Ferrari di kegelapan kamar + keyboard backlit illuminated."
+        },
+        {
+          src: "assets/laptops/elitebook-645-desk-setup.jpg",
+          desc: "Workstation malam hari: Dual display setup, ambient light merah, dan visual lirik lagu One Direction."
+        },
+        {
+          src: "assets/laptops/elitebook-645-car-mobile.jpg",
+          desc: "Mobile dev on-the-go di dalam mobil: Terminal Discord live, task logging, dan companion audio."
+        }
+      ]
     }
   };
 

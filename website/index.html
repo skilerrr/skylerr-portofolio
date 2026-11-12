@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="id" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -36,15 +36,18 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://skylerproject.vercel.app">
   <meta property="og:image" content="https://skylerproject.vercel.app/assets/og-image.jpg">
+  <meta property="og:site_name" content="skylerproject_">
+  <meta property="og:locale" content="id_ID">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@skylerproject_">
+  <meta name="twitter:creator" content="@skylerproject_">
   <meta name="twitter:title" content="skylerproject_ | Portfolio, Media & Laptop Desk">
   <meta name="twitter:description" content="Web developer, short-form F1 creator, and business laptop specialist in Medan.">
   <meta name="twitter:image" content="https://skylerproject.vercel.app/assets/og-image.jpg">
-
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -71,10 +74,7 @@
 
 <body>
 
-  <!-- Screen Scanline Overlay (CRT Effect - Subtle) -->
-  <div class="crt-overlay"></div>
-
-  <!-- Main Grid Page Wrapper (Loaded directly with clean fade-in) -->
+  <!-- Main Grid Page Wrapper -->
   <div class="page-wrapper page-fade-in">
 
     <!-- Header / Navigation -->
@@ -86,30 +86,27 @@
 
       <!-- Desktop Nav Links -->
       <nav class="desktop-nav" aria-label="Main Navigation">
-        <a href="#hero" class="nav-link" data-t="nav.home">HOME</a>
-        <a href="#about" class="nav-link" data-t="nav.about">ABOUT</a>
-        <a href="#rig" class="nav-link" data-t="nav.rig">DAILY RIG</a>
-        <a href="#projects" class="nav-link" data-t="nav.projects">PROJECTS</a>
-        <a href="#services" class="nav-link" data-t="nav.services">SERVICES</a>
-        <a href="#popular-videos" class="nav-link" data-t="nav.popular">TOP CLIPS</a>
-        <a href="#media-channels" class="nav-link" data-t="nav.channels">CHANNELS</a>
+        <a href="#hero" class="nav-link" data-t="nav.home">BERANDA</a>
+        <a href="#about" class="nav-link" data-t="nav.about">TENTANG</a>
+        <a href="#rig" class="nav-link" data-t="nav.rig">LAPTOP HARIAN</a>
+        <a href="#projects" class="nav-link" data-t="nav.projects">PROYEK</a>
+        <a href="#services" class="nav-link" data-t="nav.services">LAYANAN</a>
+        <a href="#popular-videos" class="nav-link" data-t="nav.popular">KLIP POPULER</a>
+        <a href="#media-channels" class="nav-link" data-t="nav.channels">SALURAN</a>
       </nav>
 
       <!-- Header Controls: Lang, Theme, and Mobile Menu Toggle -->
       <div class="header-controls">
-        <!-- Desktop Language Switcher -->
         <div class="lang-selector desktop-only glass-pill">
-          <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-          <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+          <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-btn active" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
         </div>
 
-        <!-- Theme Toggle -->
-        <button class="theme-toggle-btn glass-pill" id="theme-toggle" aria-label="Toggle Dark/Light Theme">
+        <button class="theme-toggle-btn glass-pill" id="theme-toggle" aria-label="Ganti tema gelap/terang">
           <span class="theme-toggle-icon">☼</span>
         </button>
 
-        <!-- Mobile Hamburger Button -->
-        <button class="mobile-menu-toggle glass-pill" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <button class="mobile-menu-toggle glass-pill" id="mobile-menu-toggle" aria-label="Buka menu navigasi" aria-controls="mobile-nav-drawer" aria-expanded="false">
           <span class="hamburger-line line-1"></span>
           <span class="hamburger-line line-2"></span>
           <span class="hamburger-line line-3"></span>
@@ -120,55 +117,55 @@
     <!-- Mobile Nav Backdrop Overlay -->
     <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
 
-    <!-- Mobile Drawer Nav (Glass Floating Menu) -->
-    <nav class="mobile-nav-drawer glass-panel" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <!-- Mobile Drawer Nav -->
+    <nav class="mobile-nav-drawer glass-panel" id="mobile-nav-drawer" aria-label="Navigasi Mobile" aria-hidden="true">
       <div class="mobile-nav-links">
         <a href="#hero" class="mobile-nav-link">
           <span class="nav-num">01</span>
-          <span data-t="nav.home">HOME</span>
+          <span data-t="nav.home">BERANDA</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#about" class="mobile-nav-link">
           <span class="nav-num">02</span>
-          <span data-t="nav.about">ABOUT</span>
+          <span data-t="nav.about">TENTANG</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#rig" class="mobile-nav-link">
           <span class="nav-num">03</span>
-          <span data-t="nav.rig">DAILY RIG</span>
+          <span data-t="nav.rig">LAPTOP HARIAN</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#projects" class="mobile-nav-link">
           <span class="nav-num">04</span>
-          <span data-t="nav.projects">PROJECTS</span>
+          <span data-t="nav.projects">PROYEK</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#services" class="mobile-nav-link">
           <span class="nav-num">05</span>
-          <span data-t="nav.services">SERVICES</span>
+          <span data-t="nav.services">LAYANAN</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#popular-videos" class="mobile-nav-link">
           <span class="nav-num">06</span>
-          <span data-t="nav.popular">TOP CLIPS</span>
+          <span data-t="nav.popular">KLIP POPULER</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#media-channels" class="mobile-nav-link">
           <span class="nav-num">07</span>
-          <span data-t="nav.channels">CHANNELS</span>
+          <span data-t="nav.channels">SALURAN</span>
           <span class="nav-arrow">›</span>
         </a>
         <a href="#contact" class="mobile-nav-link">
           <span class="nav-num">08</span>
-          <span data-t="hero.cta_contact">CONTACT</span>
+          <span data-t="hero.cta_contact">KONTAK</span>
           <span class="nav-arrow">›</span>
         </a>
       </div>
 
       <div class="drawer-lang-row">
-        <span class="drawer-lang-label" data-t="drawer.lang_label">LANGUAGE:</span>
+        <span class="drawer-lang-label" data-t="drawer.lang_label">BAHASA:</span>
         <div class="lang-selector drawer-lang-selector glass-pill">
-          <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+          <button class="lang-btn active" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
           <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
         </div>
       </div>
@@ -182,73 +179,48 @@
         <div class="hero-grid">
 
           <div class="hero-left">
-            <h1 class="hero-title glitch-text" data-text="skylerproject_" data-t="hero.title">skylerproject_</h1>
+            <h1 class="hero-title" data-t="hero.title">skylerproject_</h1>
 
-            <!-- Typewriter Container -->
             <div class="typewriter-container glass-inset">
               <span class="prompt-arrow">&gt;</span>
-              <span id="typewriter" data-t="hero.subtitle">DEVELOPER // CONTENT CREATOR // LAPTOP SPECIALIST</span>
-              <span class="terminal-cursor">█</span>
+              <span data-t="hero.subtitle">WEB DEVELOPER // VIDEO EDITOR // CEK LAPTOP MEDAN</span>
             </div>
 
             <p class="hero-bio-lead" data-t="hero.bio">
-              Building sharp modern web apps, editing viral short-form motorsport content, and helping folks around Medan track down tested second-hand business laptops.
+              Bikin website modern, edit video pendek F1, plus bantu cari dan cek laptop bisnis bekas di Medan.
             </p>
 
             <div class="hero-buttons-container">
               <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary btn-glow" data-t="hero.cta_services">SERVICES & LAPTOPS</a>
-                <a href="#projects" class="btn btn-secondary glass-btn" data-t="hero.cta_projects">EXPLORE CODE</a>
-                </div>
+                <a href="#services" class="btn btn-primary" data-t="hero.cta_services">LAYANAN & LAPTOP</a>
+                <a href="#projects" class="btn btn-secondary glass-btn" data-t="hero.cta_projects">LIHAT PROYEK</a>
+              </div>
 
               <!-- Quick Stat Badges -->
               <div class="hero-stats-row">
                 <div class="hero-stat-card glass-panel">
                   <span class="stat-num">658K+</span>
-                  <span class="stat-label" data-t="hero.stats_tiktok_views">TikTok Likes</span>
+                  <span class="stat-label" data-t="hero.stats_tiktok_views">Likes TikTok</span>
                 </div>
                 <div class="hero-stat-card glass-panel">
                   <span class="stat-num">9.6K+</span>
-                  <span class="stat-label" data-t="hero.stats_yt_subs">YouTube Subs</span>
+                  <span class="stat-label" data-t="hero.stats_yt_subs">Subs YouTube</span>
                 </div>
                 <div class="hero-stat-card glass-panel">
-                  <span class="stat-num">MEDAN</span>
-                  <span class="stat-label">On-site Desk</span>
+                  <span class="stat-num" data-t="hero.stats_desk_val">MEDAN</span>
+                  <span class="stat-label" data-t="hero.stats_desk_label">Cek di Tempat</span>
                 </div>
-              </div>
-
-              <!-- Social shortcuts placed immediately in Hero page -->
-              <div class="hero-socials">
-                <a href="#contact" class="social-circle-link discord-highlight" title="Discord: @skylerproject_">
-                  <span class="social-label">Discord</span>
-                </a>
-                <a href="https://github.com/skilerrr" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="Github">
-                  <span class="social-label">Github</span>
-                </a>
-                <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="social-circle-link tiktok-highlight" title="TikTok @skylerproject_">
-                  <span class="social-label">TikTok</span>
-                </a>
-                <a href="https://www.youtube.com/@JustSkylerProject" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="YouTube @JustSkylerProject">
-                  <span class="social-label">YouTube</span>
-                </a>
-                <a href="https://www.instagram.com/skylerproject_" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="Instagram">
-                  <span class="social-label">Instagram</span>
-                </a>
-                <a href="https://wa.me/62817769084" target="_blank" rel="noopener noreferrer" class="social-circle-link wa-highlight" title="WhatsApp Business Desk">
-                  <span class="social-label">WhatsApp</span>
-                </a>
               </div>
             </div>
           </div>
 
           <div class="hero-right">
-            <!-- Profile circle inside matte glass frame -->
             <div class="profile-container">
               <div class="glass-frame-wrapper">
                 <div class="profile-circle glass-card">
-                  <img src="assets/profile.jpg" alt="skylerproject_ profile" class="profile-img" width="320" height="320" loading="eager">
+                  <img src="assets/profile.jpg" alt="Foto profil skylerproject_" class="profile-img" width="320" height="320" loading="eager">
                 </div>
-                </div>
+              </div>
             </div>
           </div>
 
@@ -259,28 +231,28 @@
       <section id="about" class="section about-section">
         <div class="section-header-box glass-panel">
           <span class="section-idx">// 01</span>
-          <h2 class="section-title" data-t="about.title">PROFILE & CORE STACK</h2>
+          <h2 class="section-title" data-t="about.title">PROFIL & TECH STACK</h2>
         </div>
 
         <div class="about-grid-simplified">
           <div class="bio-panel-wide glass-card">
             <p class="bio-text" data-t="about.bio">
-              Hey, I'm skylerproject_ — software developer, short-form motorsport creator, and laptop hardware nerd based in Medan, Indonesia. I mix modern web stacks (TypeScript, Next.js, Laravel) with clean neo-brutalist / retro aesthetics, edit dynamic gaming & F1 clips, and run on-the-ground laptop sourcing + pre-buy inspection.
+              Berbasis di Medan. Sehari-hari ngerjain aplikasi web (TypeScript, Next.js, Laravel), edit video F1 & gaming, serta bantu cek laptop bisnis bekas sebelum dibeli.
             </p>
             <div class="bio-meta-row">
               <div class="bio-meta-item">
-                <span class="meta-label">LOCATION:</span>
-                <span class="meta-val">Medan, North Sumatra, ID</span>
+                <span class="meta-label" data-t="about.loc_label">LOKASI:</span>
+                <span class="meta-val" data-t="about.loc_val">Medan, Sumatera Utara</span>
               </div>
               <div class="bio-meta-item">
-                <span class="meta-label">FOCUS:</span>
-                <span class="meta-val">Full-Stack Web & Content & Hardware Desk</span>
+                <span class="meta-label" data-t="about.focus_label">FOKUS:</span>
+                <span class="meta-val" data-t="about.focus_val">Web Dev, Editing Video & Cek Laptop</span>
               </div>
             </div>
           </div>
 
           <div class="skills-panel-wide glass-card">
-            <h3 class="panel-subtitle" data-t="about.skills_title">WHAT I WORK WITH</h3>
+            <h3 class="panel-subtitle" data-t="about.skills_title">TECH STACK & TOOLS</h3>
             <div class="skills-grid">
               <div class="skill-chip glass-pill">TypeScript</div>
               <div class="skill-chip glass-pill">Next.js 15</div>
@@ -289,9 +261,9 @@
               <div class="skill-chip glass-pill">Laravel / PHP</div>
               <div class="skill-chip glass-pill">Tailwind CSS</div>
               <div class="skill-chip glass-pill">Vanilla HTML/JS</div>
-              <div class="skill-chip glass-pill">Video Production (Premiere/CapCut)</div>
-              <div class="skill-chip glass-pill">Hardware Stress Testing (AIDA64/FurMark)</div>
-              <div class="skill-chip glass-pill">Windows Debloat & Thermal Tuning</div>
+              <div class="skill-chip glass-pill">Premiere / CapCut</div>
+              <div class="skill-chip glass-pill">AIDA64 / HWiNFO64</div>
+              <div class="skill-chip glass-pill">Windows Optimization</div>
             </div>
           </div>
         </div>
@@ -300,68 +272,58 @@
       <!-- DAILY RIG & HARDWARE SECTION -->
       <section id="rig" class="section rig-section">
         <div class="section-header-box glass-panel">
-          <span class="section-idx">// RIG</span>
-          <h2 class="section-title" data-t="rig.title">DAILY RIG // HP ELITEBOOK 645 G11</h2>
-          <span class="section-subtitle" data-t="rig.subtitle">
-            Primary daily machine: mobile coding on-the-go, server terminal maintenance, and late-night F1 Leclerc desk setup.
-          </span>
+          <span class="section-idx">// 02</span>
+          <h2 class="section-title" data-t="rig.title">LAPTOP HARIAN // HP ELITEBOOK 645 G11</h2>
         </div>
 
         <div class="rig-card-container">
-          <!-- Left: Hero Media & Interactive Lightbox Trigger -->
-          <div class="rig-media-panel client-history-card" data-gallery-id="elitebook-645-g11" tabindex="0" role="button" aria-label="Buka galeri foto HP EliteBook 645 G11">
+          <div class="rig-media-panel">
             <div class="client-card-cover-wrapper rig-cover-wrapper">
               <img
                 src="assets/laptops/elitebook-645-f1-lockscreen.jpg"
-                alt="HP EliteBook 645 G11 - F1 Charles Leclerc #16 Setup"
+                alt="HP EliteBook 645 G11 dengan lockscreen F1 Charles Leclerc #16"
                 class="client-card-cover"
+                width="1200"
+                height="1600"
                 loading="lazy"
               />
-              <span class="client-card-tag" data-t="rig.tag_spec">AMD RYZEN 5 7535U // ZEN 3+</span>
-              <span class="client-card-status" data-t="rig.tag_chassis">ALL-METAL ALUMINUM // HP SLASH LOGO</span>
-            </div>
-            <div class="rig-media-footer">
-              <span class="btn-view-gallery">
-                <span data-t="rig.view_gallery">VIEW SETUP GALLERY (4 PHOTOS)</span> <span>↗</span>
-              </span>
+              <span class="client-card-tag" data-t="rig.tag_spec">RYZEN 5 7535U</span>
             </div>
           </div>
 
-          <!-- Right: Detailed Spec Breakdown -->
           <div class="rig-info-panel">
             <div class="rig-info-header">
-              <span class="wall-badge" data-t="rig.badge">// PERSONAL DAILY DRIVER</span>
-              <h3 class="rig-title" data-t="rig.model">HP EliteBook 645 14 inch G11 Notebook PC</h3>
+              <span class="wall-badge" data-t="rig.badge">// DAILY DRIVER</span>
+              <h3 class="rig-title" data-t="rig.model">HP EliteBook 645 14" G11</h3>
               <p class="rig-summary-text" data-t="rig.summary">
-                My reliable daily driver for casual coding, music sessions, watching race weekends, and everyday use on the go.
+                Laptop harian buat ngoding, dengerin musik, nonton F1, dan kerja di luar.
               </p>
             </div>
 
-            <!-- Hardware Spec Matrix -->
             <div class="rig-spec-matrix">
               <div class="rig-spec-item">
                 <span class="rig-spec-k">CPU:</span>
-                <span class="rig-spec-v">AMD Ryzen 5 7535U (6C/12T, Up to 4.55 GHz)</span>
+                <span class="rig-spec-v">AMD Ryzen 5 7535U (6C/12T, 4.55 GHz)</span>
               </div>
               <div class="rig-spec-item">
                 <span class="rig-spec-k">GRAPHICS:</span>
-                <span class="rig-spec-v">AMD Radeon 660M (RDNA 2, 6 CUs)</span>
+                <span class="rig-spec-v">AMD Radeon 660M (RDNA 2)</span>
               </div>
               <div class="rig-spec-item">
                 <span class="rig-spec-k">MEMORY:</span>
-                <span class="rig-spec-v">16 GB DDR5 High-Speed Dual-Channel</span>
+                <span class="rig-spec-v">16 GB DDR5 Dual-Channel</span>
               </div>
               <div class="rig-spec-item">
                 <span class="rig-spec-k">STORAGE:</span>
-                <span class="rig-spec-v">PCIe 4.0 NVMe High-Speed SSD</span>
+                <span class="rig-spec-v">PCIe 4.0 NVMe SSD</span>
               </div>
               <div class="rig-spec-item">
                 <span class="rig-spec-k">PANEL:</span>
-                <span class="rig-spec-v">14" Anti-Glare FHD IPS Display (16:10)</span>
+                <span class="rig-spec-v">14" Anti-Glare WUXGA IPS (1920×1200)</span>
               </div>
               <div class="rig-spec-item">
                 <span class="rig-spec-k">AUDIO & BUILD:</span>
-                <span class="rig-spec-v">Poly Studio Stereo // CNC Aluminum Body</span>
+                <span class="rig-spec-v">Poly Studio Stereo // Aluminum Body</span>
               </div>
             </div>
           </div>
@@ -371,25 +333,24 @@
       <!-- PROJECTS SECTION (FEATURED PROJECTS) -->
       <section id="projects" class="section projects-section">
         <div class="section-header-box glass-panel">
-          <span class="section-idx">// 02</span>
-          <h2 class="section-title" data-t="projects.title">FEATURED PROJECTS</h2>
-          <span class="section-subtitle" data-t="projects.subtitle">Open-source desktop apps & Android companion tools.</span>
+          <span class="section-idx">// 03</span>
+          <h2 class="section-title" data-t="projects.title">PROYEK UNGGULAN</h2>
+          <span class="section-subtitle" data-t="projects.subtitle">Aplikasi open-source untuk desktop & Android.</span>
         </div>
 
         <div class="projects-grid">
-          <!-- Featured Project 1: Skyler Miniplayer -->
           <article class="project-card glass-card">
             <div class="card-header">
-              <span class="card-badge badge-primary" data-t="projects.p1_tag">DESKTOP APP // ELECTRON</span>
-              <span class="card-tech">ELECTRON // JAVASCRIPT // RETRO-PIXEL & AMBIENT GLASS</span>
+              <span class="card-badge badge-primary" data-t="projects.p1_tag">DESKTOP // ELECTRON</span>
+              <span class="card-tech">ELECTRON // JAVASCRIPT // WINDOWS SMTC</span>
             </div>
             <div class="card-body">
               <h3 class="project-name" data-t="projects.p1_title">Skyler Miniplayer</h3>
-              <p class="project-desc" data-t="projects.p1_desc">Aesthetic retro-pixel & ambient-glass desktop miniplayer for Windows. Features synced karaoke lyrics, native SMTC media session integration, custom themes, and completely offline UI.</p>
+              <p class="project-desc" data-t="projects.p1_desc">Miniplayer desktop Windows bergaya retro-pixel dengan lirik karaoke sinkron, kontrol media bawaan Windows, tema kustom, dan jalan full offline.</p>
             </div>
             <div class="card-footer">
-              <a href="https://github.com/skilerrr/skylers-miniplayer#readme" target="_blank" rel="noopener noreferrer" class="card-link btn-glow-subtle">
-                <span data-t="projects.view_demo">PROJECT README</span> ↗
+              <a href="https://github.com/skilerrr/skylers-miniplayer#readme" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span data-t="projects.view_demo">README</span> ↗
               </a>
               <a href="https://github.com/skilerrr/skylers-miniplayer" target="_blank" rel="noopener noreferrer" class="card-link-sec">
                 <span data-t="projects.view_repo">SOURCE CODE</span> ↗
@@ -397,7 +358,6 @@
             </div>
           </article>
 
-          <!-- Featured Project 2: Musicalified - RPC -->
           <article class="project-card glass-card">
             <div class="card-header">
               <span class="card-badge badge-secondary" data-t="projects.p2_tag">ANDROID // DISCORD RPC</span>
@@ -405,11 +365,11 @@
             </div>
             <div class="card-body">
               <h3 class="project-name" data-t="projects.p2_title">Musicalified - RPC</h3>
-              <p class="project-desc" data-t="projects.p2_desc">Ultra-lightweight, battery-efficient Discord Rich Presence companion for Android. Hooks directly into Android's native MediaSessionManager for Apple Music, YouTube Music, and YouTube without polling.</p>
+              <p class="project-desc" data-t="projects.p2_desc">Aplikasi Discord Rich Presence ringan & hemat baterai untuk Android. Langsung baca status putar dari sistem Android untuk Apple Music, YouTube Music, dan YouTube.</p>
             </div>
             <div class="card-footer">
-              <a href="https://github.com/skilerrr/musicalified-rpc#readme" target="_blank" rel="noopener noreferrer" class="card-link btn-glow-subtle">
-                <span data-t="projects.view_demo">PROJECT README</span> ↗
+              <a href="https://github.com/skilerrr/musicalified-rpc#readme" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span data-t="projects.view_demo">README</span> ↗
               </a>
               <a href="https://github.com/skilerrr/musicalified-rpc" target="_blank" rel="noopener noreferrer" class="card-link-sec">
                 <span data-t="projects.view_repo">SOURCE CODE</span> ↗
@@ -422,31 +382,19 @@
       <!-- SERVICES & MEDAN HARDWARE DESK -->
       <section id="services" class="section services-section">
         <div class="section-header-box glass-panel">
-          <span class="section-idx">// 03</span>
-          <h2 class="section-title" data-t="services.title">SERVICES & MEDAN HARDWARE DESK</h2>
+          <span class="section-idx">// 04</span>
+          <h2 class="section-title" data-t="services.title">LAYANAN & JASA CEK LAPTOP</h2>
         </div>
 
-        <!-- Availability Status Bar -->
-        <div class="collab-status-bar glass-pill">
-          <div class="status-pulse-wrapper">
-            <span class="live-dot-pulse"></span>
-            <span class="status-badge-text" data-t="services.status">STATUS: OPEN FOR FREELANCE & COMMISSIONS</span>
-          </div>
-          <span class="turnaround-tag">MEDAN AREA COD & DIRECT DM</span>
-        </div>
-
-        <!-- 3 Core Offerings Grid -->
         <div class="collab-services-grid">
-          <!-- Card 1: Web Development -->
           <div class="service-retro-card glass-card">
             <div class="service-card-header">
-              <span class="service-badge" data-t="services.card1_badge">CODE & BUILD</span>
+              <span class="service-badge" data-t="services.card1_badge">WEB DEV</span>
               <span class="service-idx">01</span>
             </div>
             <div class="service-card-body">
-              <div class="service-icon-banner">⚡ WEB DEV</div>
-              <h3 class="service-title" data-t="services.card1_title">Web Development</h3>
-              <p data-t="services.card1_desc">Neo-brutalist landing pages, modern React / Next.js web applications, and snappy responsive microsites engineered for speed.</p>
+              <h3 class="service-title" data-t="services.card1_title">Pembuatan Website</h3>
+              <p data-t="services.card1_desc">Website, landing page, dan web app yang cepat dan responsif dengan React, Next.js, atau Laravel.</p>
               <div class="service-tags">
                 <span class="glass-pill">Next.js 15</span>
                 <span class="glass-pill">TypeScript</span>
@@ -457,109 +405,89 @@
             </div>
             <div class="service-card-footer">
               <a href="#contact" class="btn btn-secondary glass-btn btn-card-action">
-                <span data-t="services.card1_cta">KONSULTASI WEB DEV</span> ↗
+                <span data-t="services.card1_cta">TANYA WEB DEV</span> ↗
               </a>
             </div>
           </div>
 
-          <!-- Card 2: Video Editing & Production -->
           <div class="service-retro-card glass-card">
             <div class="service-card-header">
-              <span class="service-badge" data-t="services.card2_badge">MEDIA & MOTION</span>
+              <span class="service-badge" data-t="services.card2_badge">VIDEO & MOTION</span>
               <span class="service-idx">02</span>
             </div>
             <div class="service-card-body">
-              <div class="service-icon-banner">🎬 VIDEO & MOTION</div>
-              <h3 class="service-title" data-t="services.card2_title">Video Editing & Production</h3>
-              <p data-t="services.card2_desc">High-retention TikTok, Reels & YouTube Shorts. Pacing optimization, motorsport ragebait memes, and gaming showcases.</p>
+              <h3 class="service-title" data-t="services.card2_title">Editing Video</h3>
+              <p data-t="services.card2_desc">Edit video pendek untuk TikTok, Reels, dan Shorts — meme F1, klip gaming, dan pacing cepat.</p>
               <div class="service-tags">
                 <span class="glass-pill">Short-Form</span>
-                <span class="glass-pill">TikTok Viral</span>
+                <span class="glass-pill">TikTok</span>
                 <span class="glass-pill">F1 Edits</span>
                 <span class="glass-pill">YouTube Gaming</span>
               </div>
             </div>
             <div class="service-card-footer">
               <a href="#contact" class="btn btn-secondary glass-btn btn-card-action">
-                <span data-t="services.card2_cta">DISKUSI EDITING</span> ↗
+                <span data-t="services.card2_cta">TANYA EDITING</span> ↗
               </a>
             </div>
           </div>
 
-          <!-- Card 3: Business Laptop Sourcing & Check-up (Featured Medan Desk) -->
           <div class="service-retro-card glass-card highlighted-enthusiast-card">
             <div class="service-card-header">
-              <span class="service-badge badge-medan" data-t="services.card3_badge">MEDAN AREA // ON-SITE</span>
+              <span class="service-badge" data-t="services.card3_badge">AREA MEDAN // COD</span>
               <span class="service-idx">03</span>
             </div>
             <div class="service-card-body">
-              <div class="service-icon-banner">💻 BUSINESS LAPTOPS</div>
-              <h3 class="service-title" data-t="services.card3_title">Laptop Sourcing & Pre-Buy Check</h3>
-              <div class="enthusiast-callout">Khusus Area Kota Medan & Sekitarnya</div>
-              <p data-t="services.card3_desc">Looking for a reliable second-hand laptop in Medan? I help you hunt vetted business units (ThinkPad, Latitude, EliteBook) and run comprehensive diagnostic checks before purchase. Note: physical teardown & thermal repaste can be arranged with a trusted partner (negotiable).</p>
+              <h3 class="service-title" data-t="services.card3_title">Cari & Cek Laptop Seken</h3>
+              <p data-t="services.card3_desc">Cari ThinkPad, Latitude, atau EliteBook bekas di Medan? Saya bantu cari unit layak pakai serta cek fisik dan software sebelum transaksi. Butuh bongkar atau repaste? Bisa dibantu lewat rekan teknisi (nego).</p>
               <div class="service-tags">
-                <span class="glass-pill">ThinkPad T/X</span>
+                <span class="glass-pill">ThinkPad</span>
                 <span class="glass-pill">Dell Latitude</span>
-                <span class="glass-pill">Diagnostics</span>
-                <span class="glass-pill">SSD & Battery Check</span>
+                <span class="glass-pill">HP EliteBook</span>
+                <span class="glass-pill">Cek SSD & Baterai</span>
                 <span class="glass-pill">COD Medan</span>
               </div>
             </div>
             <div class="service-card-footer">
-              <a href="https://wa.me/62817769084?text=Halo%20Skyler,%20gw%20mau%20konsultasi%20/%20cari%20laptop%20sekenan%20bisnis%20di%20Medan" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow-subtle btn-card-action" data-t="services.cta_wa">
-                CHAT VIA WHATSAPP ↗
+              <a href="https://wa.me/62817769084?text=Halo%20Skyler,%20saya%20mau%20tanya%20soal%20cari%20/%20cek%20laptop%20bekas%20di%20Medan" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-card-action">
+                <span data-t="services.cta_wa">CHAT WHATSAPP</span> ↗
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Customer Wall / Client History & Inspection Archive -->
+        <!-- Client History -->
         <div class="customer-wall-container">
           <div class="customer-wall-header">
             <div class="wall-header-meta">
-              <span class="wall-badge" data-t="services.client_wall_badge">// ARSIP JASTIP & INSPEKSI</span>
+              <span class="wall-badge" data-t="services.client_wall_badge">// ARSIP SERAH TERIMA</span>
               <span class="wall-status-pill" data-t="services.card_status_verified">COD MEDAN // TERVERIFIKASI</span>
             </div>
-            <h4 class="wall-title" data-t="services.client_wall_title">Riwayat Unit & Serah Terima Klien</h4>
+            <h3 class="wall-title" data-t="services.client_wall_title">Riwayat Unit Klien</h3>
             <p class="wall-note" data-t="services.client_wall_subtitle">
-              Katalog unit sekenan bisnis yang berhasil di-hunting, lolos uji QC, dan diserahterimakan langsung ke pembeli.
+              Unit laptop bisnis yang sudah dicek dan diserahkan ke pembeli di Medan.
             </p>
           </div>
 
-          <!-- Modular Client Cards Grid -->
           <div class="client-cards-grid">
-            <!-- Card 1: HP EliteBook 640 G11 -->
-            <div class="client-history-card" data-gallery-id="elitebook-640-g11" role="button" tabindex="0" aria-label="Buka galeri HP EliteBook 640 G11">
+            <div class="client-history-card">
               <div class="client-card-cover-wrapper">
-                <img src="assets/laptops/elitebook-box-unit.jpg" alt="HP EliteBook 640 G11 Box & Unit" loading="lazy" class="client-card-cover">
-                <span class="client-card-tag">6 FOTO INSPEKSI ↗</span>
-                <span class="client-card-status">COD MEDAN</span>
+                <img src="assets/laptops/elitebook-box-unit.jpg" alt="HP EliteBook 640 G11 beserta dus dan nota pembelian" width="1200" height="900" loading="lazy" class="client-card-cover">
               </div>
               <div class="client-card-body">
                 <div class="client-card-header">
-                  <h5 class="client-card-title">HP EliteBook 640 G11</h5>
+                  <h4 class="client-card-title">HP EliteBook 640 G11</h4>
                   <span class="client-card-batch">BATCH #2026-MEDAN-01</span>
                 </div>
                 <p class="client-card-summary" data-t="services.card_summary_elitebook">
-                  Hunting unit mulus fullset kardus packaging original + charger resmi untuk klien di Medan. Lolos audit HWiNFO64, health SSD 100%, dan tes kestabilan.
+                  Unit mulus fullset (dus asli, charger ori, nota beli) untuk klien di Medan. Lolos cek HWiNFO64, SSD 100%, dan tes kestabilan.
                 </p>
                 <div class="client-card-specs">
                   <span class="editorial-pill">Core Ultra 7 165U</span>
                   <span class="editorial-pill">16 GB DDR5</span>
                   <span class="editorial-pill">512 GB NVMe</span>
                 </div>
-                <div class="client-card-footer">
-                  <span class="btn-view-gallery">
-                    <span data-t="services.card_view_gallery">BUKA GALERI (6 FOTO)</span> <span>↗</span>
-                  </span>
-                </div>
               </div>
-            </div>
-
-            <!-- Card 2: Upcoming Slot Placeholder -->
-            <div class="client-history-card client-card-placeholder" aria-hidden="true">
-              <div class="placeholder-icon">+</div>
-              <span class="placeholder-title" data-t="services.card_next_slot">// SLOT BERIKUTNYA</span>
             </div>
           </div>
         </div>
@@ -568,26 +496,24 @@
       <!-- POPULAR VIDEOS & VIRAL CLIPS SECTION (TIKTOK & YOUTUBE) -->
       <section id="popular-videos" class="section popular-videos-section">
         <div class="section-header-box glass-panel">
-          <span class="section-idx">// 04</span>
-          <h2 class="section-title" data-t="popular.title">FEATURED & VIRAL CLIPS</h2>
-          <span class="section-subtitle" data-t="popular.subtitle">Top-performing short-form motorsport memes & YouTube gaming showcases.</span>
+          <span class="section-idx">// 05</span>
+          <h2 class="section-title" data-t="popular.title">KLIP POPULER</h2>
+          <span class="section-subtitle" data-t="popular.subtitle">Edit F1 viral di TikTok dan video YouTube paling banyak ditonton.</span>
         </div>
 
-        <!-- TikTok Showcase Card (with attached profile screenshot) -->
         <div class="tiktok-viral-spotlight glass-card">
           <div class="spotlight-grid">
             <div class="spotlight-media">
-              <img src="assets/tiktok-profile.jpg" alt="TikTok @skylerproject_ profile showcase" class="spotlight-img" width="938" height="371" loading="lazy">
+              <img src="assets/tiktok-profile.jpg" alt="Profil TikTok @skylerproject_" class="spotlight-img" width="938" height="371" loading="lazy">
               <div class="spotlight-badge glass-pill">
-                <span class="badge-icon">🔥</span>
                 <span>658.9K+ TIKTOK LIKES</span>
               </div>
             </div>
             <div class="spotlight-info">
-              <div class="spotlight-tag" data-t="popular.pinned">PINNED VIRAL</div>
-              <h3 class="spotlight-title">Formula 1 Memes & Motorsport Ragebait</h3>
-              <p class="spotlight-desc">
-                High-voltage motorsport edits covering the Singapore GP, Ferrari strategic pain, Max Verstappen clips, and paddock humor under <strong>@skylerproject_</strong>.
+              <div class="spotlight-tag" data-t="popular.pinned">PINNED DI TIKTOK</div>
+              <h3 class="spotlight-title" data-t="popular.spotlight_title">Meme & Edit Formula 1</h3>
+              <p class="spotlight-desc" data-t="popular.spotlight_desc">
+                Klip pendek soal drama GP Singapura, momen Ferrari, Max Verstappen, dan candaan paddock di <strong>@skylerproject_</strong>.
               </p>
               <div class="pinned-clips-list">
                 <div class="clip-pill glass-pill">
@@ -604,17 +530,15 @@
                 </div>
               </div>
               <div class="spotlight-actions">
-                <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow" data-t="popular.view_btn">
-                  WATCH ON TIKTOK ↗
+                <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span data-t="popular.watch_tiktok">BUKA TIKTOK</span> ↗
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Popular YouTube Videos Grid -->
         <div class="popular-yt-grid">
-          <!-- Clip 1: 10 Billion CDID Secret -->
           <article class="yt-video-card glass-card">
             <div class="yt-thumb-wrap">
               <img src="assets/yt-1.jpg" alt="10 BILLION A DAY - CDID 2.4" class="yt-thumb" width="480" height="270" loading="lazy">
@@ -622,18 +546,16 @@
               <span class="yt-view-badge glass-pill">35K VIEWS</span>
             </div>
             <div class="yt-card-body">
-              <span class="yt-cat-tag" data-t="popular.yt_highlight">TOP VIEWED</span>
-              <h4 class="yt-title">10 BILLION A DAY, THIS IS THE SECRET TO GETTING RICH QUICK ON CDID!</h4>
+              <h3 class="yt-title">10 BILLION A DAY, THIS IS THE SECRET TO GETTING RICH QUICK ON CDID!</h3>
               <p class="yt-meta">JustSkyler Project • Roblox CDID 2.4</p>
             </div>
             <div class="yt-card-footer">
               <a href="https://www.youtube.com/watch?v=GdJjdjE-fF4" target="_blank" rel="noopener noreferrer" class="card-link">
-                <span data-t="popular.view_btn">WATCH CLIP</span> ↗
+                <span data-t="popular.view_btn">TONTON VIDEO</span> ↗
               </a>
             </div>
           </article>
 
-          <!-- Clip 2: Tutorial Cara Join CDIDSRP -->
           <article class="yt-video-card glass-card">
             <div class="yt-thumb-wrap">
               <img src="assets/yt-2.jpg" alt="Tutorial Cara Join CDIDSRP" class="yt-thumb" width="480" height="270" loading="lazy">
@@ -641,18 +563,16 @@
               <span class="yt-view-badge glass-pill">16K VIEWS</span>
             </div>
             <div class="yt-card-body">
-              <span class="yt-cat-tag" data-t="popular.yt_highlight">TOP VIEWED</span>
-              <h4 class="yt-title">Tutorial Cara Join CDIDSRP // Jadi Civilian Di CDIDSRP</h4>
+              <h3 class="yt-title">Tutorial Cara Join CDIDSRP // Jadi Civilian Di CDIDSRP</h3>
               <p class="yt-meta">JustSkyler Project • Community Guide</p>
             </div>
             <div class="yt-card-footer">
               <a href="https://www.youtube.com/watch?v=nv0PZKFJSeE" target="_blank" rel="noopener noreferrer" class="card-link">
-                <span data-t="popular.view_btn">WATCH CLIP</span> ↗
+                <span data-t="popular.view_btn">TONTON VIDEO</span> ↗
               </a>
             </div>
           </article>
 
-          <!-- Clip 3: 11 Billion AFK Grind CDID -->
           <article class="yt-video-card glass-card">
             <div class="yt-thumb-wrap">
               <img src="assets/yt-3.jpg" alt="11 Billion Per Day AFK Grind CDID" class="yt-thumb" width="480" height="270" loading="lazy">
@@ -660,13 +580,12 @@
               <span class="yt-view-badge glass-pill">11K VIEWS</span>
             </div>
             <div class="yt-card-body">
-              <span class="yt-cat-tag" data-t="popular.yt_highlight">TOP VIEWED</span>
-              <h4 class="yt-title">11 Billion Per Day, The Hottest Spot for AFK Grind CDID!</h4>
+              <h3 class="yt-title">11 Billion Per Day, The Hottest Spot for AFK Grind CDID!</h3>
               <p class="yt-meta">JustSkyler Project • Grinding Barista East Java</p>
             </div>
             <div class="yt-card-footer">
               <a href="https://www.youtube.com/watch?v=A82WxQxG2ag" target="_blank" rel="noopener noreferrer" class="card-link">
-                <span data-t="popular.view_btn">WATCH CLIP</span> ↗
+                <span data-t="popular.view_btn">TONTON VIDEO</span> ↗
               </a>
             </div>
           </article>
@@ -676,107 +595,98 @@
       <!-- MEDIA CHANNELS SECTION -->
       <section id="media-channels" class="section media-channels-section">
         <div class="section-header-box glass-panel">
-          <span class="section-idx">// 05</span>
-          <h2 class="section-title" data-t="media.title">MEDIA HUBS & BLOG</h2>
-          <span class="section-subtitle" data-t="media.desc">Follow my latest motorsport edits, car cruising sessions, and tech documentation across the web.</span>
+          <span class="section-idx">// 06</span>
+          <h2 class="section-title" data-t="media.title">SALURAN & CATATAN</h2>
+          <span class="section-subtitle" data-t="media.desc">Panduan tekno, meme F1, dan video gaming di platform lain.</span>
         </div>
 
         <div class="media-channels-grid">
-          <!-- Notion Tech Guides Card (Featured Knowledge Base) -->
           <div class="media-card glass-card">
             <div class="media-thumbnail-container">
               <img src="assets/media-notion.jpg" alt="Notion Tech Guides" class="media-thumbnail" width="480" height="270" loading="lazy">
             </div>
             <div class="media-card-body">
-              <span class="service-badge">KNOWLEDGE BASE</span>
+              <span class="service-badge">NOTION</span>
               <h3 class="media-card-title" data-t="media.notion_title">Notion: Tech Guides</h3>
-              <p class="media-card-desc" data-t="media.notion_desc">A detailed digital space hosting setup recommendations, laptop purchase guidelines, and code snippets.</p>
+              <p class="media-card-desc" data-t="media.notion_desc">Catatan setup Windows, checklist beli laptop bekas, dan dokumentasi kode.</p>
             </div>
             <div class="media-card-footer">
-              <a href="https://bit.ly/techguidesbyskyler" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn" data-t="media.open">
-                OPEN RESOURCE ↗
+              <a href="https://bit.ly/techguidesbyskyler" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn">
+                <span data-t="media.open_doc">BACA PANDUAN</span> ↗
               </a>
             </div>
           </div>
 
-          <!-- YouTube CDID & Gaming Card -->
           <div class="media-card glass-card">
             <div class="media-thumbnail-container">
-              <img src="assets/media-youtube.jpg" alt="YouTube JustSkyler Project Channel" class="media-thumbnail" width="480" height="270" loading="lazy">
+              <img src="assets/media-youtube.jpg" alt="Channel YouTube JustSkyler Project" class="media-thumbnail" width="480" height="270" loading="lazy">
             </div>
             <div class="media-card-body">
-              <span class="service-badge">ROBLOX & GAMING</span>
+              <span class="service-badge">YOUTUBE</span>
               <h3 class="media-card-title" data-t="media.yt_title">YouTube: CDID & Gaming</h3>
-              <p class="media-card-desc" data-t="media.yt_desc">Mainly featuring 'Car Driving Indonesia' (CDID) Roblox cruises, car reviews, custom builds, and multiplayer races.</p>
+              <p class="media-card-desc" data-t="media.yt_desc">Gameplay Car Driving Indonesia (CDID), review mobil, dan mabar.</p>
             </div>
             <div class="media-card-footer">
-              <a href="https://www.youtube.com/@JustSkylerProject" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn" data-t="media.open">
-                OPEN CHANNEL ↗
+              <a href="https://www.youtube.com/@JustSkylerProject" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn">
+                <span data-t="media.open">BUKA SALURAN</span> ↗
               </a>
             </div>
           </div>
 
-          <!-- TikTok F1 Hub Card -->
           <div class="media-card glass-card">
             <div class="media-thumbnail-container">
-              <img src="assets/tiktok-profile.jpg" alt="TikTok @skylerproject_ profile" class="media-thumbnail" width="480" height="270" loading="lazy">
+              <img src="assets/tiktok-profile.jpg" alt="Profil TikTok @skylerproject_" class="media-thumbnail" width="480" height="270" loading="lazy">
             </div>
             <div class="media-card-body">
-              <span class="service-badge">MOTORSPORT F1</span>
+              <span class="service-badge">TIKTOK</span>
               <h3 class="media-card-title" data-t="media.tiktok_title">TikTok: Formula 1 Hub</h3>
-              <p class="media-card-desc" data-t="media.tiktok_desc">Motorsport ragebait, race highlights, Singapore GP chaos, and F1 driver memes under @skylerproject_.</p>
+              <p class="media-card-desc" data-t="media.tiktok_desc">Meme F1, momen balapan, dan candaan paddock di @skylerproject_.</p>
             </div>
             <div class="media-card-footer">
-              <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn" data-t="media.open">
-                OPEN CHANNEL ↗
+              <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="btn btn-media-link glass-btn">
+                <span data-t="media.open">BUKA SALURAN</span> ↗
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- DIRECT CONTACT SECTION (DISCORD MATRIX + DIRECT LINKS) -->
+      <!-- DIRECT CONTACT SECTION -->
       <section id="contact" class="section contact-section">
         <div class="discord-direct-matrix glass-card">
           <div class="matrix-content">
             <div class="matrix-header">
-              <div class="discord-brand-pill glass-pill">
-                <span class="discord-icon-sym">💬</span>
-                <span class="discord-brand-label">DISCORD DIRECT CHANNEL</span>
-              </div>
-              <span class="direct-badge glass-pill">PRIMARY CONTACT</span>
+              <span class="wall-badge" data-t="contact.badge">// DISCORD DIRECT</span>
             </div>
 
-            <h3 class="matrix-title" data-t="contact.discord_heading">DIRECT MESSAGE VIA DISCORD</h3>
+            <h2 class="matrix-title" data-t="contact.discord_heading">DM VIA DISCORD</h2>
             <p class="matrix-desc" data-t="contact.discord_sub">
-              Fastest way to get in touch for web projects, video edits, or laptop questions in Medan:
+              Cara tercepat buat bahas proyek web, edit video, atau tanya laptop di Medan:
             </p>
 
             <div class="discord-handle-row">
-              <div class="discord-id-badge glass-inset" id="discord-id-display" title="Click to copy username">
+              <div class="discord-id-badge glass-inset" id="discord-id-display" role="button" tabindex="0" aria-label="Salin username Discord" title="Klik untuk salin username">
                 <span class="tag-prefix">@</span>
                 <span class="tag-name">skylerproject_</span>
               </div>
 
               <div class="discord-action-buttons">
-                <button class="btn btn-discord-copy btn-glow" id="discord-copy-btn" aria-label="Copy Discord Username">
-                  <span class="copy-icon">📋</span>
-                  <span class="copy-btn-label" data-t="contact.copy_btn">COPY USERNAME</span>
+                <button class="btn btn-discord-copy btn-primary" id="discord-copy-btn" aria-label="Salin username Discord">
+                  <span class="copy-btn-label" data-t="contact.copy_btn">SALIN USERNAME</span>
                 </button>
-                <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer" class="btn btn-discord-open glass-btn" data-t="contact.open_discord">
-                  OPEN DISCORD APP ↗
+                <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer" class="btn btn-discord-open glass-btn">
+                  <span data-t="contact.open_discord">BUKA DISCORD</span> ↗
                 </a>
               </div>
             </div>
 
-            <!-- Toast notification inside Discord widget -->
             <div class="copy-feedback-banner glass-pill" id="copy-feedback-banner">
-              <span class="feedback-icon">✔</span> USERNAME COPIED: <strong>skylerproject_</strong> (Add me on Discord!)
+              <span class="feedback-icon">✔</span>
+              <span data-t="contact.copied_banner">Username <strong>skylerproject_</strong> tersalin — add di Discord!</span>
             </div>
 
-            <!-- Secondary alternative links -->
             <div class="matrix-secondary-links">
-              <span class="secondary-label" data-t="contact.alt_label">Or connect directly across:</span>
+              <span class="secondary-label" data-t="contact.alt_label">Kontak lainnya:</span>
               <div class="secondary-buttons">
                 <a href="https://wa.me/62817769084" target="_blank" rel="noopener noreferrer" class="sec-link-chip glass-pill">
                   <span>WhatsApp</span> ↗
@@ -802,7 +712,7 @@
 
     </main>
 
-    <!-- Clean Matte Glass Footer -->
+    <!-- Editorial Footer -->
     <footer class="main-footer-expanded glass-panel">
       <div class="footer-container">
         <div class="footer-top-row">
@@ -811,85 +721,42 @@
               <span class="logo-blink">▲</span>
               <span class="footer-brand-title">skylerproject_</span>
             </div>
-            <p class="footer-bio-summary">
-              Developer, content creator & second-hand laptop inspection desk based in Medan, Indonesia.
+            <p class="footer-bio-summary" data-t="footer.bio">
+              Web developer, kreator konten & jasa cek laptop bekas di Medan.
             </p>
           </div>
 
           <div class="footer-links-col">
-            <span class="footer-col-title">NAVIGATION</span>
+            <span class="footer-col-title" data-t="footer.nav_title">NAVIGASI</span>
             <div class="footer-links-list">
-              <a href="#hero" class="footer-nav-link" data-t="nav.home">HOME</a>
-              <a href="#about" class="footer-nav-link" data-t="nav.about">ABOUT</a>
-              <a href="#projects" class="footer-nav-link" data-t="nav.projects">PROJECTS</a>
-              <a href="#services" class="footer-nav-link" data-t="nav.services">SERVICES</a>
-              <a href="#popular-videos" class="footer-nav-link" data-t="nav.popular">TOP CLIPS</a>
+              <a href="#hero" class="footer-nav-link" data-t="nav.home">BERANDA</a>
+              <a href="#about" class="footer-nav-link" data-t="nav.about">TENTANG</a>
+              <a href="#rig" class="footer-nav-link" data-t="nav.rig">LAPTOP HARIAN</a>
+              <a href="#projects" class="footer-nav-link" data-t="nav.projects">PROYEK</a>
+              <a href="#services" class="footer-nav-link" data-t="nav.services">LAYANAN</a>
+              <a href="#popular-videos" class="footer-nav-link" data-t="nav.popular">KLIP POPULER</a>
+              <a href="#media-channels" class="footer-nav-link" data-t="nav.channels">SALURAN</a>
+              <a href="#contact" class="footer-nav-link" data-t="hero.cta_contact">KONTAK</a>
             </div>
           </div>
 
           <div class="footer-connect-col">
-            <span class="footer-col-title">CONNECT</span>
+            <span class="footer-col-title" data-t="footer.connect_title">KONTAK</span>
             <div class="footer-links-list">
               <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Discord (@skylerproject_)</a>
               <a href="https://www.tiktok.com/@skylerproject_" target="_blank" rel="noopener noreferrer" class="footer-nav-link">TikTok (@skylerproject_)</a>
               <a href="https://github.com/skilerrr" target="_blank" rel="noopener noreferrer" class="footer-nav-link">GitHub (skilerrr)</a>
-              <a href="https://wa.me/62817769084" target="_blank" rel="noopener noreferrer" class="footer-nav-link">WhatsApp Business</a>
-            </div>
-          </div>
-
-          <div class="footer-status-col">
-            <span class="footer-col-title">SYSTEM STATUS</span>
-            <div class="footer-status-card glass-inset">
-              <div class="footer-status-item">
-                <span class="status-dot-active"></span>
-                <span class="status-text-live">ALL CHANNELS ACTIVE</span>
-              </div>
-              <div class="status-clock-box">
-                <span class="clock-label">WIB (MEDAN):</span>
-                <span id="system-clock" class="clock-display">00:00:00 AM</span>
-              </div>
+              <a href="https://wa.me/62817769084" target="_blank" rel="noopener noreferrer" class="footer-nav-link">WhatsApp</a>
             </div>
           </div>
         </div>
 
-        <!-- Footer Bottom Bar -->
         <div class="footer-bottom-bar">
-          <p data-t="footer.copyright">© 2026 skylerproject_. ALL RIGHTS RESERVED.</p>
-          <div class="footer-logo-gfx">▲ MONOLITH ARCHIVE // BUILT WITH CARE</div>
+          <p data-t="footer.copyright">© 2026 skylerproject_. HAK CIPTA DILINDUNGI.</p>
         </div>
       </div>
     </footer>
 
-  </div>
-
-  <!-- Image Lightbox Modal for Client Inspection Gallery -->
-  <div id="image-lightbox-modal" class="editorial-modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="editorial-modal-backdrop" id="modal-backdrop"></div>
-    <div class="editorial-modal-window">
-      <div class="editorial-modal-header">
-        <div class="modal-header-text">
-          <span class="modal-badge">// ARSIP INSPEKSI LAPTOP</span>
-          <h4 class="modal-title" id="lightbox-title">HP EliteBook 640 G11</h4>
-        </div>
-        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Tutup galeri">✕</button>
-      </div>
-
-      <div class="editorial-modal-viewer">
-        <button type="button" class="lightbox-arrow lightbox-arrow-prev" id="lightbox-prev" aria-label="Foto sebelumnya">‹</button>
-        <div class="lightbox-stage">
-          <img id="lightbox-img" src="" alt="Bukti inspeksi laptop" class="lightbox-image">
-        </div>
-        <button type="button" class="lightbox-arrow lightbox-arrow-next" id="lightbox-next" aria-label="Foto selanjutnya">›</button>
-      </div>
-
-      <div class="editorial-modal-footer">
-        <div class="lightbox-meta">
-          <span class="lightbox-counter" id="lightbox-counter">1 / 6</span>
-          <p class="lightbox-desc" id="lightbox-desc"></p>
-        </div>
-        <div class="lightbox-dots" id="lightbox-dots"></div>
-      </div>
-    </div>
   </div>
 
   <!-- Translation and Logic Scripts -->

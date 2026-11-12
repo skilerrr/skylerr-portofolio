@@ -16,17 +16,20 @@ class RetroCursorController {
     // Trail particles
     this.particles = [];
     
-    // Custom cursor DOM elements
     this.cursorEl = null;
     this.cursorTextEl = null;
-    
-    // Current hover state for cursor text
     this.cursorText = "SKYLER";
+    this.hasMoved = false;
     
     this.init();
   }
 
   init() {
+    const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+    if (!hasFinePointer) {
+      return;
+    }
+
     // 1. Create Background Canvas
     this.canvas = document.createElement("canvas");
     this.canvas.id = "bg-grid-canvas";
@@ -52,7 +55,6 @@ class RetroCursorController {
     this.cursorEl.appendChild(this.cursorTextEl);
     document.body.appendChild(this.cursorEl);
 
-    // Style the cursor elements dynamically using JS for dimensions/layout
     Object.assign(this.cursorEl.style, {
       position: "fixed",
       top: "0",
@@ -67,16 +69,15 @@ class RetroCursorController {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      backdropFilter: "blur(4px)",
-      webkitBackdropFilter: "blur(4px)",
+      opacity: "0",
       backgroundColor: "var(--cursor-bg)",
-      transition: "width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, backdrop-filter 0.2s, -webkit-backdrop-filter 0.2s"
+      transition: "width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, opacity 0.15s"
     });
 
     Object.assign(this.cursorTextEl.style, {
       position: "absolute",
       top: "24px",
-      fontFamily: "'Space Mono', monospace",
+      fontFamily: "'JetBrains Mono', monospace",
       fontSize: "8px",
       color: "var(--text-color, #ffffff)",
       whiteSpace: "nowrap",
@@ -88,26 +89,14 @@ class RetroCursorController {
       transition: "color 0.2s"
     });
 
-    // Hide default cursor on desktop with mouse pointer
-    const isTouch = window.matchMedia("(pointer: coarse)").matches || ('ontouchstart' in window);
-    if (!isTouch) {
-      document.documentElement.style.cursor = "none";
-    } else {
-      this.cursorEl.style.display = "none";
-    }
-    
-    // 3. Bind Event Listeners
+    document.documentElement.style.cursor = "none";
+
     window.addEventListener("resize", () => this.resizeCanvas());
     window.addEventListener("mousemove", (e) => this.onMouseMove(e));
-    window.addEventListener("scroll", () => this.onScroll());
-    
-    // Add custom hover behavior to interactive parts
+    window.addEventListener("scroll", () => this.onScroll(), { passive: true });
+
     this.setupInteractivity();
-    
-    // 4. Initial Layout setup
     this.resizeCanvas();
-    
-    // 5. Start Animation Loop
     requestAnimationFrame((t) => this.tick(t));
   }
 
@@ -119,13 +108,15 @@ class RetroCursorController {
   }
 
   onMouseMove(e) {
+    if (!this.hasMoved) {
+      this.hasMoved = true;
+      this.cursorX = e.clientX;
+      this.cursorY = e.clientY;
+      if (this.cursorEl) this.cursorEl.style.opacity = "1";
+    }
     this.mouseX = e.clientX;
     this.mouseY = e.clientY;
     
-    // Update CSS variables for radial gradient background
-    document.documentElement.style.setProperty("--mouse-x", `${this.mouseX}px`);
-    document.documentElement.style.setProperty("--mouse-y", `${this.mouseY}px`);
-
     // Add highlighted grid cell
     const col = Math.floor(this.mouseX / this.gridSize);
     const row = Math.floor(this.mouseY / this.gridSize);
@@ -161,12 +152,10 @@ class RetroCursorController {
     const updateHoverState = (el, text) => {
       el.addEventListener("mouseenter", () => {
         this.cursorText = text;
-        this.cursorEl.style.width = "40px";
-        this.cursorEl.style.height = "40px";
+        this.cursorEl.style.width = "38px";
+        this.cursorEl.style.height = "38px";
         this.cursorEl.classList.add("hovered");
         this.cursorEl.style.backgroundColor = "var(--cursor-hover-bg)";
-        this.cursorEl.style.backdropFilter = "blur(6px)";
-        this.cursorEl.style.webkitBackdropFilter = "blur(6px)";
         this.cursorTextEl.style.color = "var(--text-color, #ffffff)";
         this.cursorTextEl.style.transform = "scale(1)";
         this.cursorTextEl.style.fontWeight = "bold";
@@ -178,56 +167,29 @@ class RetroCursorController {
         this.cursorEl.style.height = "20px";
         this.cursorEl.classList.remove("hovered");
         this.cursorEl.style.backgroundColor = "var(--cursor-bg)";
-        this.cursorEl.style.backdropFilter = "blur(4px)";
-        this.cursorEl.style.webkitBackdropFilter = "blur(4px)";
         this.cursorTextEl.style.color = "var(--text-color, #ffffff)";
         this.cursorTextEl.style.transform = "scale(0.8)";
         this.cursorTextEl.style.fontWeight = "normal";
       });
     };
 
-    const attachListeners = () => {
-      // Buttons/CTAs
-      document.querySelectorAll("a, button, .theme-toggle-btn, .lang-btn, .music-btn, .enter-prompt").forEach(el => {
-        if (!el.dataset.cursorBound) {
-          el.dataset.cursorBound = "true";
-          let msg = "CLICK";
-          if (el.href && el.href.includes("github")) msg = "GITHUB";
-          else if (el.href && el.href.includes("instagram")) msg = "INSTA";
-          else if (el.href && el.href.includes("youtube")) msg = "YOUTUBE";
-          else if (el.href && el.href.includes("tiktok")) msg = "TIKTOK";
-          else if (el.href && el.href.includes("wa.me")) msg = "CHAT";
-          else if (el.href && el.href.includes("mailto")) msg = "EMAIL";
-          else if (el.classList.contains("lang-btn")) msg = "LANG";
-          else if (el.classList.contains("theme-toggle-btn")) msg = "THEME";
-          else if (el.id === "music-play-btn") msg = "AUDIO";
-          else if (el.id === "music-vol-btn") msg = "VOLUME";
-          else if (el.classList.contains("enter-prompt")) msg = "ENTER";
-          updateHoverState(el, msg);
-        }
-      });
+    document.querySelectorAll("a, button, .theme-toggle-btn, .lang-btn, .discord-id-badge").forEach(el => {
+      let msg = "CLICK";
+      if (el.href && el.href.includes("github")) msg = "GITHUB";
+      else if (el.href && el.href.includes("instagram")) msg = "INSTA";
+      else if (el.href && el.href.includes("youtube")) msg = "YOUTUBE";
+      else if (el.href && el.href.includes("tiktok")) msg = "TIKTOK";
+      else if (el.href && el.href.includes("wa.me")) msg = "CHAT";
+      else if (el.href && el.href.includes("mailto")) msg = "EMAIL";
+      else if (el.classList.contains("lang-btn")) msg = "LANG";
+      else if (el.classList.contains("theme-toggle-btn")) msg = "THEME";
+      else if (el.id === "discord-id-display") msg = "COPY";
+      updateHoverState(el, msg);
+    });
 
-      // Form inputs
-      document.querySelectorAll("input, textarea").forEach(el => {
-        if (!el.dataset.cursorBound) {
-          el.dataset.cursorBound = "true";
-          updateHoverState(el, "TYPE");
-        }
-      });
-
-      // Project and media cards
-      document.querySelectorAll(".project-card, .media-card").forEach(el => {
-        if (!el.dataset.cursorBound) {
-          el.dataset.cursorBound = "true";
-          let tag = "VIEW";
-          if (el.classList.contains("media-card")) tag = "OPEN";
-          updateHoverState(el, tag);
-        }
-      });
-    };
-
-    attachListeners();
-    setInterval(attachListeners, 1000);
+    document.querySelectorAll(".project-card, .media-card").forEach(el => {
+      updateHoverState(el, el.classList.contains("media-card") ? "OPEN" : "VIEW");
+    });
   }
 
   tick() {
@@ -245,26 +207,6 @@ class RetroCursorController {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
       const isDarkMode = document.documentElement.getAttribute("data-theme") !== "light";
-      
-      // Grid lines
-      const gridColor = isDarkMode ? "rgba(34, 34, 34, 0.4)" : "rgba(220, 220, 220, 0.4)";
-      this.ctx.strokeStyle = gridColor;
-      this.ctx.lineWidth = 1;
-
-      for (let x = 0; x < this.canvas.width; x += this.gridSize) {
-        this.ctx.beginPath();
-        this.ctx.moveTo(x, 0);
-        this.ctx.lineTo(x, this.canvas.height);
-        this.ctx.stroke();
-      }
-
-      for (let y = 0; y < this.canvas.height; y += this.gridSize) {
-        this.ctx.beginPath();
-        this.ctx.moveTo(0, y);
-        this.ctx.lineTo(this.canvas.width, y);
-        this.ctx.stroke();
-      }
-
       // Draw active cells
       for (const key in this.activeCells) {
         const cell = this.activeCells[key];

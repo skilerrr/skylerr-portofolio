@@ -277,7 +277,7 @@
         </div>
 
         <div class="rig-card-container">
-          <div class="rig-media-panel">
+          <div class="rig-media-panel client-history-card" data-gallery-id="elitebook-645-g11" tabindex="0" role="button" aria-label="Buka galeri foto HP EliteBook 645 G11">
             <div class="client-card-cover-wrapper rig-cover-wrapper">
               <img
                 src="assets/laptops/elitebook-645-f1-lockscreen.jpg"
@@ -288,6 +288,11 @@
                 loading="lazy"
               />
               <span class="client-card-tag" data-t="rig.tag_spec">RYZEN 5 7535U</span>
+            </div>
+            <div class="rig-media-footer">
+              <span class="btn-view-gallery">
+                <span data-t="rig.view_gallery">BUKA GALERI (4 FOTO)</span> <span>↗</span>
+              </span>
             </div>
           </div>
 
@@ -470,9 +475,10 @@
           </div>
 
           <div class="client-cards-grid">
-            <div class="client-history-card">
+            <div class="client-history-card" data-gallery-id="elitebook-640-g11" role="button" tabindex="0" aria-label="Buka galeri foto HP EliteBook 640 G11">
               <div class="client-card-cover-wrapper">
                 <img src="assets/laptops/elitebook-box-unit.jpg" alt="HP EliteBook 640 G11 beserta dus dan nota pembelian" width="1200" height="900" loading="lazy" class="client-card-cover">
+                <span class="client-card-tag"><span data-t="services.client_card_photos">6 FOTO</span> ↗</span>
               </div>
               <div class="client-card-body">
                 <div class="client-card-header">
@@ -486,6 +492,11 @@
                   <span class="editorial-pill">Core Ultra 7 165U</span>
                   <span class="editorial-pill">16 GB DDR5</span>
                   <span class="editorial-pill">512 GB NVMe</span>
+                </div>
+                <div class="client-card-footer">
+                  <span class="btn-view-gallery">
+                    <span data-t="services.card_view_gallery">BUKA GALERI (6 FOTO)</span> <span>↗</span>
+                  </span>
                 </div>
               </div>
             </div>
@@ -757,6 +768,33 @@
       </div>
     </footer>
 
+  </div>
+
+  <!-- Image Lightbox Modal (Images only, no description) -->
+  <div id="image-lightbox-modal" class="editorial-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="editorial-modal-backdrop" id="modal-backdrop"></div>
+    <div class="editorial-modal-window">
+      <div class="editorial-modal-header">
+        <div class="modal-header-text">
+          <span class="modal-badge" data-t="modal.badge">// GALERI FOTO</span>
+          <h3 class="modal-title" id="lightbox-title">HP EliteBook 640 G11</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Tutup galeri">✕</button>
+      </div>
+
+      <div class="editorial-modal-viewer">
+        <button type="button" class="lightbox-arrow lightbox-arrow-prev" id="lightbox-prev" aria-label="Foto sebelumnya">‹</button>
+        <div class="lightbox-stage">
+          <img id="lightbox-img" src="" alt="" class="lightbox-image">
+        </div>
+        <button type="button" class="lightbox-arrow lightbox-arrow-next" id="lightbox-next" aria-label="Foto selanjutnya">›</button>
+      </div>
+
+      <div class="editorial-modal-footer">
+        <span class="lightbox-counter" id="lightbox-counter">1 / 6</span>
+        <div class="lightbox-dots" id="lightbox-dots"></div>
+      </div>
+    </div>
   </div>
 
   <!-- Translation and Logic Scripts -->

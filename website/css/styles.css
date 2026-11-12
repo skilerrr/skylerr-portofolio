@@ -174,6 +174,15 @@ section[id] {
   scroll-margin-top: 88px;
 }
 
+@media (pointer: fine) {
+  .client-history-card,
+  .modal-close-btn,
+  .lightbox-arrow,
+  .lightbox-dot {
+    cursor: none;
+  }
+}
+
 @media (pointer: coarse), (max-width: 992px) {
   html, body, * {
     cursor: auto !important;
@@ -390,7 +399,8 @@ section[id] {
   pointer-events: auto;
 }
 
-body.menu-open {
+body.menu-open,
+body.modal-open {
   overflow: hidden !important;
   touch-action: none;
 }
@@ -1033,7 +1043,15 @@ body.menu-open {
 
 .rig-cover-wrapper {
   aspect-ratio: 4 / 3;
-  height: 100%;
+}
+
+.rig-media-footer {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  background: var(--surface-dim);
 }
 
 .rig-info-panel {
@@ -1177,6 +1195,16 @@ body.menu-open {
   background: var(--surface-dim);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: transform var(--transition-snappy), box-shadow var(--transition-snappy), border-color var(--transition-snappy);
+  outline: none;
+}
+
+.client-history-card:hover,
+.client-history-card:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--hard-shadow-accent);
+  border-color: var(--accent-color);
 }
 
 .client-card-cover-wrapper {
@@ -1193,6 +1221,11 @@ body.menu-open {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.25s ease;
+}
+
+.client-history-card:hover .client-card-cover {
+  transform: scale(1.03);
 }
 
 .client-card-tag {
@@ -1262,7 +1295,236 @@ body.menu-open {
   border: 1px solid var(--border-color);
 }
 
+.client-card-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-view-gallery {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent-secondary);
+  letter-spacing: 0.05em;
+  transition: transform var(--transition-snappy);
+}
+
+.client-history-card:hover .btn-view-gallery {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   EDITORIAL LIGHTBOX MODAL (IMAGES ONLY)
+   ========================================================================== */
+.editorial-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.editorial-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.editorial-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.editorial-modal-window {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 860px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--hard-shadow);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.editorial-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--surface-dim);
+}
+
+.modal-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modal-badge {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--accent-secondary);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-color);
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-snappy), color var(--transition-snappy);
+}
+
+.modal-close-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+  border-color: var(--accent-color);
+}
+
+.editorial-modal-viewer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: #0a0a0c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+.lightbox-stage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.15s ease;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(18, 18, 22, 0.88);
+  border: 1px solid var(--border-color);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 24px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background var(--transition-snappy), border-color var(--transition-snappy);
+}
+
+.lightbox-arrow:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.lightbox-arrow-prev {
+  left: 12px;
+}
+
+.lightbox-arrow-next {
+  right: 12px;
+}
+
+.editorial-modal-footer {
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-color);
+  background: var(--surface-dim);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lightbox-counter {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent-secondary);
+  background: var(--surface-card);
+  padding: 3px 8px;
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.lightbox-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lightbox-dot {
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--border-color);
+  background: var(--surface-card);
+  cursor: pointer;
+  transition: background var(--transition-snappy), transform var(--transition-snappy);
+}
+
+.lightbox-dot.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: scale(1.2);
+}
+
 @media (max-width: 768px) {
+  .editorial-modal {
+    padding: 10px;
+  }
+  .editorial-modal-viewer {
+    height: 340px;
+  }
+  .lightbox-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
   .client-cards-grid {
     grid-template-columns: 1fr;
   }

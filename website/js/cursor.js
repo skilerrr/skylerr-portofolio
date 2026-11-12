@@ -173,7 +173,7 @@ class RetroCursorController {
       });
     };
 
-    document.querySelectorAll("a, button, .theme-toggle-btn, .lang-btn, .discord-id-badge").forEach(el => {
+    document.querySelectorAll("a, button, [role='button'], .theme-toggle-btn, .lang-btn, .discord-id-badge").forEach(el => {
       let msg = "CLICK";
       if (el.href && el.href.includes("github")) msg = "GITHUB";
       else if (el.href && el.href.includes("instagram")) msg = "INSTA";
@@ -184,6 +184,7 @@ class RetroCursorController {
       else if (el.classList.contains("lang-btn")) msg = "LANG";
       else if (el.classList.contains("theme-toggle-btn")) msg = "THEME";
       else if (el.id === "discord-id-display") msg = "COPY";
+      else if (el.dataset.galleryId) msg = "VIEW";
       updateHoverState(el, msg);
     });
 
